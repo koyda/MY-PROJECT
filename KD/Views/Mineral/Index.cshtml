@@ -1,0 +1,175 @@
+﻿
+@{
+    ViewBag.Title = "Index1";
+}
+
+@*@Styles.Render("~/content/datatable")*@
+<link href="~/Content/Plugins/DataTable/datatables.css" rel="stylesheet" />
+<div class="ocs-container">
+
+    <div class="ocs-head-title">
+        <div class="ocs-left">
+            <div class="ocs-icon-head"><i class="ri-profile-line"></i></div><div class="ocs-text-function">យថាប្រភេទចំណូល</div>
+            @*<div class="ocs-head-title"><span class="text-header" ocs-data-tag="list_mineral">បញ្ចីរ៉ែ</span></div>*@
+        </div>
+        <div class="ocs-middle"></div>
+        <div class="ocs-right">
+            @*<button class="btn-custom btn-add-custom ocs-ripple" id="btn_add_mineral"><i class="ri-add-line icon-time"></i><div class="title-button" ocs-data-tag="btn_add">បង្កើត</div></button>*@
+        </div>
+    </div>
+
+    <section class="ocs-container-view-list">
+        <div class="ocs-head-list-filter">
+            <div class="left">
+                <div class="nav-filter-record">
+                    @*<div class="text-befor-filter-record">បង្ហាញ</div>*@
+                    <div class="main-select-record" id="list_filter_record">
+                        <div class="btn-ripple-color-black btn-record-display">
+                            <div class="text-record-display">10</div>
+                            <span class="icon"><i class="ri-arrow-drop-down-line"></i></span>
+                        </div>
+                        <div class="content-item-select">
+                            <span class="item">10</span>
+                            <span class="item">20</span>
+                            <span class="item">50</span>
+                            <span class="item">100</span>
+                        </div>
+                    </div>
+                    @*<div class="text-befor-filter-record">ចំនួនប្រតិបត្តិការ</div>*@
+                </div>
+                <div class="nav-filter-chip">
+                    <button class="btn-ripple-color-black btn-filter-chip" id="btn_filter_chip">
+                        <i class="ri-filter-2-line"></i>
+                        <div class="text">ច្រោះរក</div>
+                    </button>
+                    <div class="nav-dialog-filter-chip">
+                        <div class="nav-head">
+                            <div class="left"><i class="ri-filter-2-line"></i><div class="text">ច្រោះរក</div></div>
+                            <div class="right"><button class="ocs-action-btn-close-chip"><i class="ri-close-line"></i></button></div>
+                        </div>
+                        <div class="nav-content-chip" style="height:60px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <button class="btn-ripple-color-black btn-refresh-list"><i class="ri-refresh-line"></i></button>
+                <div class="nav-filter-search" id="btn_main_search"><div class="icon-search"><i class="ri-search-2-line"></i></div><input type="text" class="form-control-search" placeholder="ស្វែងរក" /><div class="icon-clear-text"><i class="ri-close-fill"></i></div></div>
+            </div>
+        </div>
+        <div class="nav-list-data">
+            <table class="table responsive">
+                <thead>
+                    <tr>
+                        <th class="all min-width">Code</th>
+                        <th class="min-width">Name</th>
+                        <th class="all min-width">Description</th>
+                        <th class="min-width">Status</th>
+                        <th class="min-width">Create By</th>
+                        <th class="min-width">Creare Date</th>
+                        <th class="min-width">Update By</th>
+                        <th class="min-width">Update Date</th>
+                        <th class="all min-width tr-th-custom"><span class="th-action-custom">Action</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#0001</td>
+                        <td>PRODUCT KD</td>
+                        <td>THIS IS DATA TEST BY KD</td>
+                        <td>Active</td>
+                        <td>KD</td>
+                        <td>10-01-2022</td>
+                        <td>KD</td>
+                        <td>10-01-2022</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!--<section class="ocs-fill ocs-fill-container">
+
+        <div class="table-filter nav-filter">
+            <div class="ocs-left ocs-left-filter-record">
+
+                <div class="v2-show">
+
+                    <div class="wrapper-select-record">
+
+                        <div class="box-show-record" id="box_show_record">
+                            <div class="num-record-show" id="select_record">10</div>
+                            <span class="icon-arrow-down" id="icon_arrow_donw"><i class="ri-arrow-drop-down-line"></i></span>
+                        </div>
+
+                        <div class="wrapper-item-select" id="wrapper_item_select">
+                            <span class="item-number">10</span>
+                            <span class="item-number">20</span>
+                            <span class="item-number">50</span>
+                            <span class="item-number">100</span>
+                        </div>
+
+                    </div>
+
+                </div>-->
+    @*chip*@
+    <!--<div class="ocs-filter receipt-filter" id="dialog_chip" style="margin-left:5px;">
+        <button class="ocs-btn-filter">
+            <i class="fa fa-filter"></i><span ocs-data-tag="filter" class="text-filter-chip">Filter</span>
+        </button>
+        <div class="ocs-dialog ocs-dialog-chip">
+            <div class="chip-header">
+                <div class="text-head-chip" ocs-data-tag="filter_mineral_type">Filter Categroies</div>
+                <div class="container-btn-close-chip"><div class="btn_close_chip" id="btn_close_chip_diload"><i class="ri-close-line close-filter"></i></div></div>
+            </div>
+            <div class="ocs-body ocs-body-chip">
+                <input type="text" class="form-control form-control-select" id="form_select_chip" />
+            </div>
+        </div>
+    </div>-->
+    @*chip append*@
+    <!--<div class="nav-chip-filter show-on-screen-computer nav-chip-on-filter" id="nav_chip_filter"></div>
+        </div>
+        <div class="ocs-right ocs-right-custom">
+            <button class="btn-custom btn-refresh-custom v2-tooltip ocs-ripple" title="Refresh" id="btn_reload_list"><i class="ri-refresh-line"></i></button>
+            <div class="v2-search form-search">
+                <input type="search" class="form-control form-search-list" placeholder="Search" ocs-data-tag="search" id="input_search_list">
+            </div>
+        </div>
+    </div>-->
+    @*chip append*@
+    <!--<div class="nav-chip-filter show-on-screen-phone nav-chip-on-filter"></div>
+
+        <div class="table-responsive">
+            <table class="table responsive" id="table_mineral_list">
+                <thead>
+                    <tr>
+                        <th class="all min-width" ocs-data-tag="name_mineral"></th>
+                        <th class="min-width" ocs-data-tag="name_mineral_en"></th>
+                        <th class="all min-width" ocs-data-tag="name_mineral_type"></th>
+                        <th class="min-width" ocs-data-tag="name_mineral_type_en"></th>
+                        <th ocs-data-tag="description">Description</th>
+                        <th class="min-width" ocs-data-tag="status">Status</th>
+                        <th class="min-width" ocs-data-tag="user_create">Create By</th>
+                        <th class="min-width" ocs-data-tag="date_create">Creare Date</th>
+                        <th class="min-width" ocs-data-tag="user_update">Update By</th>
+                        <th class="min-width" ocs-data-tag="date_update">Update Date</th>
+                        <th class="all min-width tr-th-custom"><span class="th-action-custom" ocs-data-tag="action">Action</span></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div class="nav-footer-custom">
+            <div class="left">
+                <span class="text-record-custom" ocs-data-tag="total_record">Total Record</span><span class="line-pluse">:</span>
+                <span class="text-count-custom" id="count_record_mineral">00</span>
+            </div>
+            <div class="right">
+                <div class="nav-pagination" id="pagination_mineral"></div>
+            </div>
+        </div>
+    </section>-->
+</div>
+<script src="~/Content/Plugins/DataTable/datatables.js"></script>

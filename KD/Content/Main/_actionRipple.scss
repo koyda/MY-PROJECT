@@ -1,0 +1,61 @@
+.main_action_ripple {
+    position: relative;
+    overflow: hidden !important;
+
+    .ripple-inner-black {
+        position: absolute;
+        display: block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #00000013;
+        animation: animation-ripple .5s ease-out;
+    }
+
+    @keyframes animation-ripple {
+        0% {
+            transform: scale(0);
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(1.2);
+            opacity: 0;
+        }
+    }
+}
+
+
+
+.btn-ripple-color-white {
+    position: relative;
+    overflow: hidden !important;
+
+    .ripple-inner-white {
+        position: absolute;
+        display: block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #ffffff17;
+        animation: animation-ripple .5s ease-out;
+    }
+
+    @keyframes animation-ripple {
+        0% {
+            transform: scale(0);
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(1.2);
+            opacity: 0;
+        }
+    }
+}

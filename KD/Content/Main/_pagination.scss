@@ -1,0 +1,49 @@
+.main-nav-pagination {
+    display: flex;
+    align-items: center;
+    grid-gap: 0px 3px;
+
+    .main-btn-page {
+        width: 34px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        color: $main-color-menu;
+        background: $main-background-by-primary;
+        font-size: 11px;
+        line-height: 10px;
+        transition: all .15s ease-in-out;
+
+        &:hover {
+            background: #f1f2f3;
+        }
+
+        &:active {
+            transition: 0.1s ease-in-out;
+            transform: scale(0.9);
+        }
+
+        &.disabled {
+            pointer-events: none;
+            color: #cdcdcd;
+        }
+
+        &.active {
+            background: $main-color-primary;
+            color: #fff;
+            pointer-events: none;
+        }
+    }
+
+    .main-icon {
+        font-size: 11px;
+        line-height: 11px;
+        font-weight: bold;
+    }
+
+    li:first-child {
+        border-radius: 3px 0 0 3px;
+    }
+}

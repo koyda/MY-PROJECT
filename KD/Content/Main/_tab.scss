@@ -1,0 +1,88 @@
+.main-tab-group-content {
+
+    .main-nav-tab {
+        position: sticky;
+        top: 0px;
+        display: flex;
+        align-items: flex-start;
+        grid-gap: 0px 20px;
+        height: 30px;
+        background: $main-color-white;
+
+        .main-btn-switch-tab {
+
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            display: flex;
+            user-select: none;
+            color: $main-color-menu;
+            font-size: 12px;
+            line-height: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease-in-out;
+
+            &:hover {
+                opacity: 0.9;
+            }
+
+        }
+
+        .active {
+            position: relative;
+            color: $main-color-primary;
+
+            &::after {
+                position: absolute;
+                content: "";
+                width: 3px;
+                height: 6px;
+                left: -8px;
+                border-radius: 4px;
+                top: 50%;
+                transform: translate(0px, -50%);
+                background: $main-color-primary;
+                animation: animatino-active-tab 0.25s ease-in-out;
+                opacity: 1;
+            }
+
+            @keyframes animatino-active-tab {
+                from {
+                    opacity: 0;
+                    height: 0px;
+                }
+
+                to {
+                    opacity: 1;
+                    height: 6px;
+                }
+            }
+        }
+    }
+
+    .main-tab-content-view {
+        margin-top: 16px;
+
+        .main-tab-pane {
+            display: none;
+            animation: animation-to-left 0.2s ease-in-out;
+            margin-left: 0px;
+        }
+
+        @keyframes animation-to-left {
+            from {
+                margin-left: 10px;
+            }
+
+            to {
+                margin-left: 0px;
+            }
+        }
+    }
+}
+
+.main-tab-group-content .main-nav-tab .main-btn-switch-tab.disabled {
+    color: #bfbfbf;
+    pointer-events: none;
+}

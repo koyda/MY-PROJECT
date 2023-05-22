@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "KD";
+}
+@section Styles{
+    <link href="~/Content/Plugins/DataTablesCustom/datatable.css" rel="stylesheet" />
+}
+<style>
+    .nav-view-card {
+        margin: 18px;
+        display: flex;
+        align-items: center;
+    }
+
+    .card-profile {
+        width: 160px;
+        height: 140px;
+        border-radius: 10px;
+        background: #fff;
+        cursor: pointer;
+    }
+</style>
+<div class="main-container">
+
+    <div class="main-head-title">
+        <div class="main-left">
+            <div class="main-icon-head main-add-size-3px"><i class="ri-speaker-line"></i></div><div class="main-text-function">ធុងបាសសង់</div>
+        </div>
+        <div class="main-middle"></div>
+        <div class="ocs-right">
+            <button class="main-btn-action only-icon-500 main_action_ripple blue" main-color-ripple="#52d7ff59" id="btn_add_new"><i class="ri-add-line icon-bold"></i><div class="title-button" ocs-data-tag="btn_add">បង្កើត</div></button>
+        </div>
+    </div>
+    @*<div class="nav-view-card">
+            <div class="card-profile main_action_ripple" main-color-ripple="#52d7ff59"></div>
+        </div>*@
+    <section class="main-container-view-list">
+        <div class="main-head-list-filter">
+            <div class="left">
+                <div class="nav-filter-record">
+                    @*<div class="text-befor-filter-record">បង្ហាញ</div>*@
+                    <div class="main-select-record main-tooltip" title="ចំនួនបង្ហាញ" id="list_filter_record">
+                        <div class="btn-record-display main_action_ripple" main-color-ripple="#989ca169">
+                            <div class="text-record-display">10</div>
+                            <span class="icon"><i class="ri-arrow-down-s-line"></i></span>
+                        </div>
+                        <div class="content-item-select">
+                            <span class="item">10</span>
+                            <span class="item">20</span>
+                            <span class="item">50</span>
+                            <span class="item">100</span>
+                        </div>
+                    </div>
+                    @*<div class="text-befor-filter-record">ចំនួនប្រតិបត្តិការ</div>*@
+                </div>
+                <div class="nav-filter-chip">
+                    <button class="main-tooltip btn-filter-chip main_action_ripple" main-color-ripple="#989ca169" title="ច្រោះរកតាមប្រភេទ" id="btn_filter_chip">
+                        <i class="ri-filter-2-line"></i>
+                        <div class="text">ច្រោះរក</div>
+                    </button>
+                    <div class="nav-dialog-filter-chip">
+                        <div class="nav-head">
+                            <div class="left"><i class="ri-filter-2-line"></i><div class="text">ច្រោះរក</div></div>
+                            <div class="right"><button class="ocs-action-btn-close-chip"><i class="ri-close-line"></i></button></div>
+                        </div>
+                        <div class="nav-content-chip" style="height:60px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <button class="main-tooltip btn-refresh-list main_action_ripple" main-color-ripple="#989ca169" id="btn_reload" title="ទាញម្ដងទៀត"><i class="ri-refresh-line"></i></button>
+                <div class="nav-filter-search" id="btn_main_search"><div class="icon-search main-tooltip" title="ស្វែងរក"><i class="ri-search-2-line"></i></div><input type="text" class="form-control-search" placeholder="ស្វែងរក" /><div class="nav-btn-clear-search main-tooltip" title="លុប"><div class="main-btn-clear-search"><i class="ri-close-fill"></i></div></div></div>
+            </div>
+        </div>
+        <div class="nav-list-data">
+            <div class="table-responsive">
+                <table class="table responsive" id="table">
+                    <thead>
+                        <tr>
+                            <th class="max-width">ឈ្មោះ</th>
+                            <th class="min-width" ocs-data-tag="user_create">អ្នកបង្កើត</th>
+                            <th class="min-width" ocs-data-tag="date_create">ថ្ងៃបង្កើត</th>
+                            <th class="min-width" ocs-data-tag="user_update">អ្នកកែប្រែ</th>
+                            <th class="min-width" ocs-data-tag="date_update">ថ្ងៃកែប្រែ</th>
+                            <th class="all min-width tr-th-custom"><span class="nav-th-text" ocs-data-tag="action">សកម្មភាព</span></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="main-nav-footer-view-list">
+            <div class="left">
+                <div class="main-text-record">កំណត់ត្រាទាំងអស់</div><div class="main-space">:</div><div class="main-record-count">100</div>
+            </div>
+            <div id="pagination"></div>
+        </div>
+    </section>
+</div>
+@section modals{
+    @Html.Partial("~/Views/KD/_Create.cshtml")
+}
+@section scripts{
+    @Scripts.Render("~/bundles/datatable")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Content/Plugins/DataTables/datatables.js"></script>
+    <script src="~/Scripts/Views/KD/controlller.js" type="module"></script>
+    <script>
+        $(document).ready(function () {
+            $("#nav_speaker").mainActiveMenu();
+        });
+    </script>
+}
+

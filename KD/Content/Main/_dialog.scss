@@ -1,0 +1,390 @@
+// Header Dialog
+.hdr-dialog-group {
+    position: relative;
+    margin-right: 10px;
+
+    i.button {
+        font-size: 22px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        cursor: pointer;
+        color: white;
+        -webkit-text-fill-color: white;
+
+        & > * {
+            pointer-events: none;
+            user-select: none;
+        }
+
+        &:hover {
+            background: #00000033;
+        }
+    }
+
+    ul.dialog {
+        position: absolute;
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        right: 0;
+        top: calc(100% + 16px);
+        background: white;
+        border-radius: 0.25rem;
+        overflow: hidden;
+        padding: 10px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        display: none;
+        z-index: 1;
+        animation: hdr-dialog 0.2s ease alternate;
+
+        @keyframes hdr-dialog {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        li.item {
+            color: var(--text-color);
+            -webkit-text-fill-color: var(--text-color);
+            display: flex;
+            list-style-type: none;
+            padding: 8px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            font-family: $font7;
+            white-space: nowrap;
+            user-select: none;
+
+            & > * {
+                pointer-events: none;
+                user-select: none;
+            }
+
+            span {
+                font-family: $font7;
+                font: unset;
+            }
+
+            &:hover {
+                background: #e2e2e2;
+            }
+        }
+    }
+
+    &.show {
+        i.button {
+            background: #00000033;
+        }
+
+        ul.dialog {
+            display: block;
+        }
+    }
+}
+
+// Change Language Dialog
+.hdr-top-change-lang {
+    position: relative;
+    margin-right: 10px;
+
+    i.button {
+        font-size: 22px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        cursor: pointer;
+        color: white;
+        -webkit-text-fill-color: white;
+
+        & > * {
+            pointer-events: none;
+            user-select: none;
+        }
+
+        &:hover {
+            background: #00000033;
+        }
+    }
+
+    ul.dialog {
+        position: absolute;
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        right: 0;
+        top: calc(100% + 16px);
+        background: white;
+        @include text-color(black);
+        border-radius: 0.25rem;
+        overflow: hidden;
+        padding: 10px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        display: none;
+        z-index: 1;
+        animation: hdr-dialog 0.2s ease alternate;
+
+        @keyframes hdr-dialog {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        li.item {
+            color: var(--text-color);
+            -webkit-text-fill-color: var(--text-color);
+            display: flex;
+            list-style-type: none;
+            padding: 8px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            font-family: $font7;
+            white-space: nowrap;
+            user-select: none;
+
+            & > * {
+                pointer-events: none;
+                user-select: none;
+            }
+
+            img {
+                height: 20px;
+                width: 30px;
+                margin-right: 13px;
+                border-radius: 0.25rem;
+            }
+            &.active {
+                pointer-events: none;
+                opacity: 0.5;
+            }
+
+            &:hover {
+                background: #e2e2e2;
+            }
+        }
+    }
+
+    &.show {
+        i.button {
+            background: #00000033;
+        }
+
+        ul.dialog {
+            display: block;
+        }
+    }
+}
+
+// Change Language Dialog
+.v2-dropdown-dialog {
+    position: relative;
+    margin-right: 10px;
+
+    i.button {
+        font-size: 22px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        cursor: pointer;
+        color: #7d7d7d;
+        -webkit-text-fill-color: #7d7d7d;
+
+        & > * {
+            pointer-events: none;
+            user-select: none;
+        }
+
+        &:hover {
+            background: #00000033;
+        }
+    }
+
+    ul.dialog {
+        position: absolute;
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        right: 0;
+        top: 0;
+        background: white;
+        border-radius: 0.25rem;
+        overflow: hidden;
+        padding: 10px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        display: none;
+        z-index: 1;
+        animation: hdr-dialog 0.2s ease alternate;
+
+        @keyframes hdr-dialog {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        li.item {
+            color: var(--text-color);
+            -webkit-text-fill-color: var(--text-color);
+            display: flex;
+            list-style-type: none;
+            padding: 8px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            font-family: $font7;
+            white-space: nowrap;
+            user-select: none;
+
+            & > * {
+                pointer-events: none;
+                user-select: none;
+            }
+
+            img {
+                height: 20px;
+                width: 30px;
+                margin-right: 13px;
+                border-radius: 0.25rem;
+            }
+            &.active {
+                pointer-events: none;
+                opacity: 0.5;
+            }
+
+            &:hover {
+                background: #e2e2e2;
+            }
+        }
+    }
+
+    &.show {
+        i.button {
+            background: #00000033;
+        }
+
+        ul.dialog {
+            display: block;
+        }
+    }
+}
+
+// User Dialog
+.nv-hdr-user-dialog-group {
+    position: relative;
+    color: #1c3a57;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > * {
+        all: unset;
+    }
+
+    .user-dialog-group-action {
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .hdr-user-dialog {
+        @include text-color(black);
+        position: absolute;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        right: 0;
+        top: calc(100% + 16px);
+        border-radius: 0.25rem;
+        overflow: hidden;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        min-width: 230px;
+        z-index: 1;
+        animation: nv-hdr-user-dialog-group-dialog 0.25s linear alternate;
+
+        @keyframes nv-hdr-user-dialog-group-dialog {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hdr-user-dialog-name-group {
+            width: 100%;
+            line-height: 1.3;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            -webkit-text-fill-color: var(--ocs-text-color);
+        }
+
+        .hdr-user-dialog-action-group {
+            width: 100%;
+        }
+
+        a {
+            white-space: nowrap;
+            cursor: pointer;
+            -webkit-text-fill-color: #6c757d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 35px;
+            text-decoration: none;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            padding: 3px 10px;
+            box-sizing: border-box;
+            transition: all 0.25s ease;
+            width: 100%;
+
+            &:hover {
+                background: #e9ecef;
+            }
+
+            &.btn-logout {
+                margin-bottom: 20px;
+                margin-top: 20px;
+                border-top: unset;
+                background: #e9ecef;
+                max-width: 130px;
+                border-radius: 0.25rem;
+                transition: all 0.25s ease;
+
+                &:hover {
+                    background: #ced4da;
+                }
+            }
+        }
+    } // user dialog
+
+    &.show {
+        display: inline-flex !important;
+
+        .hdr-user-dialog {
+            display: flex;
+        }
+    }
+}

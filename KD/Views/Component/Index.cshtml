@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+</style>
+<div style="height:20px;"></div>
+<div class="main-container">
+    <section class="main-container-view-list">
+        <div class="main-tab-group">
+            <div class="main-tabs">
+                <div class="main-tab-item">
+                    <div class="main-tab-link active" main-tab-target="#all">ធុងសង់</div>
+                </div>
+                <div class="main-tab-item">
+                    <div class="main-tab-link" main-tab-target="#tabs_1">ធុងសាប់</div>
+                </div>
+                <div class="main-tab-item">
+                    <div class="main-tab-link" main-tab-target="#tabs_2">អាំភ្លី</div>
+                </div>
+            </div>
+            <div class="main-tab-content">
+                <div class="main-tab-pane" id="all" style="display:block;">
+                    <div style="height:200px;background:#d5dde1;display:flex;justify-content:center;align-items:center;color:#fff;border-radius:8px">ធុងសង់</div>
+                </div>
+                <div class="main-tab-pane" id="tabs_1">
+                    <div style="height:200px;background:#d5dde1;display:flex;justify-content:center;align-items:center;color:#fff;border-radius:8px;">ធុងសាប់</div>
+                </div>
+                <div class="main-tab-pane" id="tabs_2">
+                    <div style="height:200px;background:#d5dde1;display:flex;justify-content:center;align-items:center;color:#fff;border-radius:8px;">អាំភ្លី</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background:#808080;height:100px;">
+            <div class="lds-dual-ring"></div>
+            <div style="height:10px;"></div>
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </div>
+
+        <div style="background:#808080;height:100px;">
+            <div class="lds-dual-ring"></div>
+            <div style="height:10px;"></div>
+            <div class="global-wait">
+                <span class="loader"></span>
+            </div>
+        </div>
+
+    </section>
+</div>

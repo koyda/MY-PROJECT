@@ -1,0 +1,230 @@
+﻿.js-snackbar-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-width: 100%;
+    grid-gap: 10px;
+    padding: 25px;
+    overflow: hidden;
+    z-index: 2000;
+}
+
+.js-snackbar-container--fixed {
+    position: fixed;
+}
+
+.js-snackbar-container * {
+    box-sizing: border-box;
+}
+
+.js-snackbar__wrapper {
+    transition: all .5s ease-in-out;
+    max-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    height: auto;
+    overflow: hidden;
+    padding: 14px 20px;
+    border-radius: 16px;
+}
+
+.js-snackbar {
+    display: inline-flex;
+    box-sizing: border-box;
+    border-radius: 3px;
+    color: #eee;
+    font-size: 16px;
+    background-color: #444444;
+}
+
+.js-snackbar__close,
+.js-snackbar__status,
+.js-snackbar__message {
+    position: relative;
+}
+
+.js-snackbar__message {
+    padding: 12px;
+    width: 100%;
+}
+
+.js-snackbar__status {
+    display: none;
+    width: 15px;
+    margin-right: 5px;
+    border-radius: 25px;
+    background-color: transparent;
+    border: 5px #444444 solid;
+    padding: 3px;
+    margin-left: 2px;
+}
+
+.js-snackbar__status.js-snackbar--success,
+.js-snackbar__status.js-snackbar--warning,
+.js-snackbar__status.js-snackbar--danger,
+.js-snackbar__status.js-snackbar--info {
+    display: block;
+}
+
+.js-snackbar__status.js-snackbar--success {
+    background-color: #838cff;
+}
+
+.js-snackbar__status.js-snackbar--warning {
+    background-color: #ff9800;
+}
+
+.js-snackbar__status.js-snackbar--danger {
+    background-color: #e91e63;
+}
+
+.js-snackbar__status.js-snackbar--info {
+    background-color: #2196f3;
+}
+
+.js-snackbar__action {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    color: #838cff;
+    cursor: pointer;
+}
+
+.js-snackbar__action:hover {
+    background-color: #333;
+}
+
+.js-snackbar__close {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    user-select: none;
+    color: #BBB;
+}
+
+.js-snackbar__close:hover {
+    background-color: #444;
+}
+
+/*BY KD*/
+.main-snackbar-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-width: 100%;
+    grid-gap: 10px;
+    padding: 25px;
+    overflow: hidden;
+    z-index: 2000;
+    /*animation: show_snackbar_with_animation 10s ease-in-out;*/
+}
+
+.mian-box-snackbar {
+    max-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    height: auto;
+    padding: 14px 20px;
+    border-radius: 16px;
+    animation: show_snackbar_with_animation 0.25s ease-in-out;
+}
+
+@keyframes show_snackbar_with_animation {
+    from {
+        margin-bottom: -100%;
+    }
+
+    to {
+        margin-bottom: 0px;
+    }
+}
+
+.main-left-snackbar {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 10px;
+}
+
+.main-icon-snackbar {
+    width: 22px;
+    min-width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #85BF41;
+    box-shadow: 0px 0px 6px #85bf4161;
+}
+
+.main-icon-snackbar img {
+    height: 9px;
+}
+
+
+.status-success-snackbar {
+    background: #F5F9F1;
+}
+
+.status-success-snackbar .main-text-status-snackbar {
+    color: #85BF41;
+}
+
+
+.main-detail-snackbar {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 8px;
+    margin-top: 4px;
+    color: #545454;
+}
+
+.main-detail-snackbar .main-text-status-snackbar {
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: bold;
+}
+
+.main-detail-snackbar .main-text-detail-snackbar {
+    font-size: 11px;
+    line-height: 17px;
+    color: #818181;
+}
+
+.main-right-snackbar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.main-btn-close-snackbar {
+    width: 22px;
+    min-width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 12px;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+}
+
+.main-btn-close-snackbar:hover {
+    background: #ededed;
+}
+
+.main-btn-close-snackbar img {
+    height: 12px;
+}

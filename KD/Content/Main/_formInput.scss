@@ -1,0 +1,141 @@
+.main-input-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 12px;
+}
+
+.main-group-input-border {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+
+    label {
+        font-size: 12px;
+        line-height: 11px;
+        font-weight: 500;
+        margin-bottom: 0px;
+        color: $main-color-label;
+        margin-bottom: 10px;
+    }
+
+    input {
+        width: 100%;
+        padding: 0px 18px;
+        height: 42px;
+        min-height: 42px;
+        border-radius: 8px;
+        outline: none;
+        font-size: 14px;
+        color: $main-color-input;
+        background: transparent;
+        border: 1px solid $main-color-border-input;
+        transition: all 0.25s ease-in-out;
+
+        &:focus {
+            border: 1px solid #4aadcf59;
+        }
+
+        &::placeholder {
+            font-size: 13px;
+            line-height: 11px;
+            color: $main-color-placeholder;
+        }
+    }
+
+    .main-input-with-icon {
+        position: relative;
+        height: 42px;
+        min-height: 42px;
+
+        input {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        .main-icon {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            i {
+                font-size: 14px;
+                line-height: 14px;
+                color: $main-color-label;
+            }
+
+            img {
+                height: 13px;
+            }
+        }
+    }
+
+
+}
+
+.main-content-check-box {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    padding: 0px 18px;
+    min-height: 42px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: $main-color-checkbox;
+    background: transparent;
+    border: 1px solid $main-color-border-input;
+    transition: all 0.25s ease-in-out;
+
+    input {
+        display: none;
+    }
+
+    label {
+        position: relative;
+        display: block;
+        padding-left: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        margin-bottom: 0px;
+        font-size: 12px;
+        line-height: 12px;
+        color: $main-color-text-checkbox;
+    }
+
+    label:before {
+        position: absolute;
+        content: "";
+        width: 12px;
+        height: 12px;
+        left: 0px;
+        background-color: $main-color-not-checkbox;
+        box-shadow: 0px 0px 2px $main-color-not-checkbox;
+        border-radius: 50%;
+    }
+
+    input:checked+label:before {
+        background-color: $main-color-checkbox;
+        box-shadow: 0px 0px 2px $main-color-checkbox;
+        animation: animation-box-radio 0.25s ease-in-out;
+    }
+
+    @keyframes animation-box-radio {
+        from {
+            opacity: 0;
+            transform: scale(0.2);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}

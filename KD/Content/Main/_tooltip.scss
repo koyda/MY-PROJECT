@@ -1,0 +1,31 @@
+.v2-tooltip-elm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #575757;
+  color: white;
+  padding: 5px 10px;
+  z-index: 9999999999;
+  border-radius: 0.25rem;
+  font-size: 11px;
+  animation: v2-tooltip-elm 0.25s alternate ease;
+  pointer-events: none;
+  user-select: none;
+
+  &::after{
+    content: '';
+    position: absolute;
+    height: 6px;
+    width: 6px;
+    background: #575757;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%, 0) rotate(45deg);
+  }
+
+  @keyframes v2-tooltip-elm {
+    0% {
+      opacity: 0;
+    }
+  }
+}

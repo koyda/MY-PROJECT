@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "km";
+    src: url("/Content/Fonts/Content/Content-Regular.ttf");
+}
+@font-face {
+    font-family: "en";
+    src: url("/Content/Fonts/Montserrat/Montserrat-Regular.ttf");
+}
+:root {
+    --font: "en", "km", -apple-system, sans-serif;
+}

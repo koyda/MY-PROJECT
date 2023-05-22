@@ -1,0 +1,261 @@
+.hm-wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    box-sizing: border-box;
+    -webkit-text-fill-color: white;
+    background: $g-background;
+    display: flex;
+    flex-direction: column;
+
+    .ocs-clinic-name {
+        text-align: center;
+        padding-left: 0;
+        font-size: 16px;
+        margin-bottom: 0;
+
+        @include responsive(768px) {
+            text-align: left;
+            padding-left: 10px;
+            font-size: 14px;
+        }
+    }
+
+    .hm-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        background: var(--nav-background-color);
+
+        .logo {
+            img.img-logo,
+            img.img-logo-round {
+                height: 38px;
+            }
+
+            img.img-logo-round {
+                display: none;
+            }
+
+            @include responsive(768px) {
+                img.img-logo-round {
+                    display: block;
+                }
+
+                img.img-logo {
+                    display: none;
+                }
+            }
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .hm-container {
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+        max-width: 1500px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: calc(100vh - 80px);
+
+        .header {
+            justify-content: center;
+            align-items: center;
+            height: 55px;
+        }
+
+        .body {
+            max-height: 100%;
+            overflow: auto;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+        }
+    }
+
+    .hm-footer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+    }
+
+    .hm-menus {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+        @include responsive(775px) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        @include responsive(621px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @include responsive(467px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .item {
+            list-style-type: none;
+            box-sizing: border-box;
+            width: 150px;
+            height: 150px;
+            padding-top: 10px;
+            box-sizing: border-box;
+            border: 1px solid transparent;
+
+            .box {
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                -webkit-text-fill-color: white;
+                align-items: center;
+                justify-content: center;
+                border-radius: 0.25rem;
+                cursor: pointer;
+                user-select: none;
+
+                & > * {
+                    pointer-events: none;
+                }
+
+                $icon-width: 70px;
+
+                .icon {
+                    position: relative;
+                    font-size: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: $icon-width;
+                    min-height: $icon-width;
+                    width: $icon-width;
+                    min-width: $icon-width;
+                    border-radius: $icon-width;
+                    margin-bottom: 10px;
+                }
+
+                .title {
+                    font-size: 13px;
+                    opacity: 0.9;
+                    overflow: hidden;
+                    text-align: center;
+                    text-overflow: ellipsis;
+                    padding: 1px 10px;
+                    width: 100%;
+                    height: 70px;
+                    margin-bottom: 2px;
+
+                    &.b {
+                        font-family: $font7;
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &:nth-child(10n + 1) {
+                .box {
+                    .icon {
+                        background: #007bff;
+                    }
+                }
+            }
+
+            &:nth-child(10n + 2) {
+                .box {
+                    .icon {
+                        background: #dc3545;
+                    }
+                }
+            }
+            &:nth-child(10n + 3) {
+                .box {
+                    .icon {
+                        background: #28a745;
+                    }
+                }
+            }
+            &:nth-child(10n + 4) {
+                .box {
+                    .icon {
+                        background: #ffc107;
+                    }
+                }
+            }
+            &:nth-child(10n + 5) {
+                .box {
+                    .icon {
+                        background: #6610f2;
+                    }
+                }
+            }
+            &:nth-child(10n + 6) {
+                .box {
+                    .icon {
+                        background: #009688;
+                    }
+                }
+            }
+            &:nth-child(10n + 7) {
+                .box {
+                    .icon {
+                        background: orange;
+                    }
+                }
+            }
+
+            &:nth-child(10n + 8) {
+                .box {
+                    .icon {
+                        background: #ff5722;
+                    }
+                }
+            }
+            &:nth-child(10n + 9) {
+                .box {
+                    .icon {
+                        background: cadetblue;
+                    }
+                }
+            }
+            &:nth-child(10n + 10) {
+                .box {
+                    .icon {
+                        background: #673ab7;
+                    }
+                }
+            }
+
+            &:hover {
+                border-radius: 0.25rem;
+                background: #ffffff26;
+            }
+        }
+    }
+}

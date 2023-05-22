@@ -1,0 +1,13 @@
+.main-page-transition {
+    animation: animation-to-left-page-transition 0.25s ease-in-out;
+}
+
+@keyframes animation-to-left-page-transition {
+    from {
+        margin-left: 40px;
+    }
+
+    to {
+        margin-left: 0px;
+    }
+}

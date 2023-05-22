@@ -1,0 +1,509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6C58F899-146F-4B4B-91D2-6C7E4C65B6E2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KD</RootNamespace>
+    <AssemblyName>KD</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44391</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Company\CompanyController.cs" />
+    <Compile Include="Controllers\ComponentController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KDController.cs" />
+    <Compile Include="Controllers\LoadingController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MapController.cs" />
+    <Compile Include="Controllers\Mineral\MineralController.cs" />
+    <Compile Include="Controllers\Products\ProductsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Assets\icon\1.png" />
+    <Content Include="Content\Assets\icon\arrow-down.png" />
+    <Content Include="Content\Assets\icon\arrow-left.png" />
+    <Content Include="Content\Assets\icon\call.png" />
+    <Content Include="Content\Assets\icon\check.png" />
+    <Content Include="Content\Assets\icon\close.png" />
+    <Content Include="Content\Assets\icon\delete.png" />
+    <Content Include="Content\Assets\icon\email.png" />
+    <Content Include="Content\Assets\icon\facebook %281%29.png" />
+    <Content Include="Content\Assets\icon\facebook.png" />
+    <Content Include="Content\Assets\icon\filter.png" />
+    <Content Include="Content\Assets\icon\maxLayout.png" />
+    <Content Include="Content\Assets\icon\minLayout.png" />
+    <Content Include="Content\Assets\icon\notification.png" />
+    <Content Include="Content\Assets\icon\notification.svg" />
+    <Content Include="Content\Assets\icon\phone-call %281%29.png" />
+    <Content Include="Content\Assets\icon\update.png" />
+    <Content Include="Content\Assets\icon\view.png" />
+    <Content Include="Content\Assets\image\1.jpg" />
+    <Content Include="Content\Assets\Login\login.png" />
+    <Content Include="Content\Assets\Login\login1.png" />
+    <Content Include="Content\Assets\Login\logo.png" />
+    <Content Include="Content\Assets\logo\flag-english.png" />
+    <Content Include="Content\Assets\logo\flag-khmer.png" />
+    <Content Include="Content\Assets\logo\jbl-read.jpeg" />
+    <Content Include="Content\Assets\logo\JBL.jpg" />
+    <Content Include="Content\Assets\logo\logo.png" />
+    <Content Include="Content\Assets\logo\profile.jpg" />
+    <Content Include="Content\Assets\logo\Round Left.png" />
+    <Content Include="Content\Assets\logo\Round Top.png" />
+    <Content Include="Content\Assets\logo\Round-no-space.png" />
+    <Content Include="Content\Assets\logo\Round.png" />
+    <Content Include="Content\Assets\logo\Text Only.png" />
+    <Content Include="Content\Assets\logo\user.png" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\Site.css" />
+    <Content Include="Content\css\TableCustom.css" />
+    <Content Include="Content\Main\Button.js" />
+    <Content Include="Content\Main\Component\drop-list.css" />
+    <Content Include="Content\Main\Component\drop-list.js" />
+    <Content Include="Content\Main\Header.js" />
+    <Content Include="Content\Main\js\actionRipple.js" />
+    <Content Include="Content\Main\js\activeMenu.js" />
+    <Content Include="Content\Main\js\tab.js" />
+    <Content Include="Content\Main\js\_contentRightDialog.js" />
+    <Content Include="Content\Main\js\_filterChip.js" />
+    <Content Include="Content\Main\js\_pageTransition.js" />
+    <Content Include="Content\Main\Login\Login.css" />
+    <Content Include="Content\Main\main.css" />
+    <Content Include="Content\Main\main.css.map" />
+    <Content Include="Content\Main\main.js" />
+    <Content Include="Content\Main\main.scss" />
+    <Content Include="Content\Main\menu.js" />
+    <Content Include="Content\Main\_actionRipple.scss" />
+    <Content Include="Content\Main\_auth.scss" />
+    <Content Include="Content\Main\_buttons.scss" />
+    <Content Include="Content\Main\_color.scss" />
+    <Content Include="Content\Main\_contentView.scss" />
+    <Content Include="Content\Main\_dashboard.scss" />
+    <Content Include="Content\Main\_dialog.scss" />
+    <Content Include="Content\Main\_fonts.scss" />
+    <Content Include="Content\Main\_generals.scss" />
+    <Content Include="Content\Main\_homeMenu.scss" />
+    <Content Include="Content\Main\_imageView.scss" />
+    <Content Include="Content\Main\_loader.scss" />
+    <Content Include="Content\Main\_mainLayOut.scss" />
+    <Content Include="Content\Main\_mainToHeader.scss" />
+    <Content Include="Content\Main\_modal.scss" />
+    <Content Include="Content\Main\_panel.scss" />
+    <Content Include="Content\Main\_responsive.scss" />
+    <Content Include="Content\Main\_tooltip.scss" />
+    <Content Include="Content\Main\_variables.scss" />
+    <Content Include="Content\Plugins\AnimateCounter\jQuerySimpleCounter.js" />
+    <Content Include="Content\Plugins\Bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\Plugins\Bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\Plugins\Bootstrap\css\bootstrap.css" />
+    <Content Include="Content\Plugins\Bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Content\Plugins\Bootstrap\js\bootstrap.js" />
+    <Content Include="Content\Plugins\Chart.js\Chart.bundle.js" />
+    <Content Include="Content\Plugins\Chart.js\Chart.css" />
+    <Content Include="Content\Plugins\Chart.js\Chart.js" />
+    <Content Include="Content\Plugins\DataTablesCustom\TableCustom.css" />
+    <Content Include="Content\Plugins\DataTables\DataTables-1.10.21\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\Plugins\DataTables\DataTables-1.10.21\images\sort_asc.png" />
+    <Content Include="Content\Plugins\DataTables\DataTables-1.10.21\images\sort_asc_disabled.png" />
+    <Content Include="Content\Plugins\DataTables\DataTables-1.10.21\images\sort_both.png" />
+    <Content Include="Content\Plugins\DataTables\DataTables-1.10.21\images\sort_desc.png" />
+    <Content Include="Content\Plugins\DataTables\DataTables-1.10.21\images\sort_desc_disabled.png" />
+    <Content Include="Content\Plugins\DataTables\DataTables-1.10.21\js\dataTables.bootstrap4.js" />
+    <Content Include="Content\Plugins\DataTables\datatables.css" />
+    <Content Include="Content\Plugins\DataTables\datatables.js" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\css\fixedColumns.bootstrap.css" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\css\fixedColumns.bootstrap.min.css" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\css\fixedColumns.bootstrap4.css" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\css\fixedColumns.bootstrap4.min.css" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\css\fixedColumns.dataTables.css" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\css\fixedColumns.dataTables.min.css" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\css\fixedColumns.foundation.css" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\css\fixedColumns.foundation.min.css" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\css\fixedColumns.jqueryui.css" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\css\fixedColumns.jqueryui.min.css" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\css\fixedColumns.semanticui.css" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\css\fixedColumns.semanticui.min.css" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\js\dataTables.fixedColumns.js" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\js\dataTables.fixedColumns.min.js" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\js\fixedColumns.bootstrap.js" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\js\fixedColumns.bootstrap.min.js" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\js\fixedColumns.bootstrap4.js" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\js\fixedColumns.bootstrap4.min.js" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\js\fixedColumns.dataTables.js" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\js\fixedColumns.foundation.js" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\js\fixedColumns.foundation.min.js" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\js\fixedColumns.jqueryui.js" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\js\fixedColumns.jqueryui.min.js" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\js\fixedColumns.semanicui.js" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\js\fixedColumns.semanticui.js" />
+    <Content Include="Content\Plugins\DataTables\FixedColumns-3.3.1\js\fixedColumns.semanticui.min.js" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\css\fixedHeader.bootstrap.css" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\css\fixedHeader.bootstrap4.css" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\css\fixedHeader.bootstrap4.min.css" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\css\fixedHeader.dataTables.css" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\css\fixedHeader.dataTables.min.css" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\css\fixedHeader.foundation.css" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\css\fixedHeader.foundation.min.css" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\css\fixedHeader.jqueryui.css" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\css\fixedHeader.semanticui.css" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\css\fixedHeader.semanticui.min.css" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\js\dataTables.fixedHeader.js" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\js\dataTables.fixedHeader.min.js" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\js\fixedHeader.bootstrap.js" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\js\fixedHeader.bootstrap.min.js" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\js\fixedHeader.bootstrap4.js" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\js\fixedHeader.bootstrap4.min.js" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\js\fixedHeader.dataTables.js" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\js\fixedHeader.foundation.js" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\js\fixedHeader.foundation.min.js" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\js\fixedHeader.jqueryui.js" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\js\fixedHeader.jqueryui.min.js" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\js\fixedHeader.semanicui.js" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\js\fixedHeader.semanticui.js" />
+    <Content Include="Content\Plugins\DataTables\FixedHeader-3.1.7\js\fixedHeader.semanticui.min.js" />
+    <Content Include="Content\Plugins\DataTables\Responsive-2.2.5\css\responsive.bootstrap4.css" />
+    <Content Include="Content\Plugins\DataTables\Responsive-2.2.5\js\dataTables.responsive.js" />
+    <Content Include="Content\Plugins\DataTables\Responsive-2.2.5\js\responsive.bootstrap4.js" />
+    <Content Include="Content\Plugins\DataTables\Select-1.3.1\css\select.bootstrap4.css" />
+    <Content Include="Content\Plugins\DataTables\Select-1.3.1\js\dataTables.select.js" />
+    <Content Include="Content\Plugins\DataTables\Select-1.3.1\js\select.bootstrap4.js" />
+    <Content Include="Content\Plugins\DateRangePicker\daterangepicker.css" />
+    <Content Include="Content\Plugins\DateRangePicker\daterangepicker.js" />
+    <Content Include="Content\Plugins\DateRangePicker\moment.min.js" />
+    <Content Include="Content\Plugins\FontAwesome\css\font-awesome.css" />
+    <Content Include="Content\Plugins\FontAwesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Plugins\InputTages\bootstrap-tagsinput.css" />
+    <Content Include="Content\Plugins\InputTages\bootstrap-tagsinput.js" />
+    <Content Include="Content\Plugins\InputTag\bootstrap-tagsinput.css" />
+    <Content Include="Content\Plugins\InputTag\bootstrap-tagsinput.js" />
+    <Content Include="Content\Plugins\jquery-cookie-master\src\jquery.cookie.js" />
+    <Content Include="Content\Plugins\JqueryConfirm\jquery-confirm-custom.css" />
+    <Content Include="Content\Plugins\JqueryConfirm\jquery-confirm.css" />
+    <Content Include="Content\Plugins\JqueryConfirm\jquery-confirm.js" />
+    <Content Include="Content\Plugins\jQueryNiceSelect\css\nice-select.css" />
+    <Content Include="Content\Plugins\jQueryNiceSelect\js\fastclick.js" />
+    <Content Include="Content\Plugins\jQueryNiceSelect\js\jquery.nice-select.js" />
+    <Content Include="Content\Plugins\jQueryNiceSelect\js\prism.js" />
+    <Content Include="Content\Plugins\JS-SnackBar\js-snackbar.css" />
+    <Content Include="Content\Plugins\JS-SnackBar\js-snackbar.js" />
+    <Content Include="Content\Plugins\remixicon\remixicon.css" />
+    <Content Include="Content\Plugins\remixicon\remixicon.svg" />
+    <Content Include="Content\Plugins\remixicon\remixicon.symbol.svg" />
+    <Content Include="Content\Plugins\SnackBar\SnackBar.css" />
+    <Content Include="Content\Plugins\SnackBar\SnackBar.js" />
+    <Content Include="Content\Plugins\swiper\swiper.css" />
+    <Content Include="Content\Plugins\swiper\swiper.js" />
+    <Content Include="Content\Plugins\tagify-master\dist\jQuery.tagify.min.js" />
+    <Content Include="Content\Plugins\tagify-master\dist\react.tagify.js" />
+    <Content Include="Content\Plugins\tagify-master\dist\tagify.css" />
+    <Content Include="Content\Plugins\tagify-master\dist\tagify.min.js" />
+    <Content Include="Content\Plugins\tagify-master\dist\tagify.polyfills.min.js" />
+    <Content Include="Content\Plugins\tagify-master\docs\codepen.css" />
+    <Content Include="Content\Plugins\tagify-master\docs\codepen.js" />
+    <Content Include="Content\Plugins\tagify-master\docs\demo.gif" />
+    <Content Include="Content\Plugins\tagify-master\docs\logo.svg" />
+    <Content Include="Content\Plugins\tagify-master\docs\mix2.gif" />
+    <Content Include="Content\Plugins\tagify-master\docs\mix3.gif" />
+    <Content Include="Content\Plugins\tagify-master\docs\readme-header.svg" />
+    <Content Include="Content\Plugins\tagify-master\src\parts\defaults.js" />
+    <Content Include="Content\Plugins\tagify-master\src\parts\dropdown.js" />
+    <Content Include="Content\Plugins\tagify-master\src\parts\EventDispatcher.js" />
+    <Content Include="Content\Plugins\tagify-master\src\parts\events.js" />
+    <Content Include="Content\Plugins\tagify-master\src\parts\helpers.js" />
+    <Content Include="Content\Plugins\tagify-master\src\parts\templates.js" />
+    <Content Include="Content\Plugins\tagify-master\src\polyfills\Array.findIndex.js" />
+    <Content Include="Content\Plugins\tagify-master\src\polyfills\Array.includes.js" />
+    <Content Include="Content\Plugins\tagify-master\src\polyfills\Array.some.js" />
+    <Content Include="Content\Plugins\tagify-master\src\polyfills\AutoUrlDetect.js" />
+    <Content Include="Content\Plugins\tagify-master\src\polyfills\Element.classList.js" />
+    <Content Include="Content\Plugins\tagify-master\src\polyfills\Element.closest.js" />
+    <Content Include="Content\Plugins\tagify-master\src\polyfills\Element.matches.js" />
+    <Content Include="Content\Plugins\tagify-master\src\polyfills\es6-promise.js" />
+    <Content Include="Content\Plugins\tagify-master\src\polyfills\Event.js" />
+    <Content Include="Content\Plugins\tagify-master\src\polyfills\NodeList.forEach.js" />
+    <Content Include="Content\Plugins\tagify-master\src\polyfills\Object.assign.js" />
+    <Content Include="Content\Plugins\tagify-master\src\polyfills\String.includes.js" />
+    <Content Include="Content\Plugins\tagify-master\src\polyfills\String.trim.js" />
+    <Content Include="Content\Plugins\tagify-master\src\react.tagify.js" />
+    <Content Include="Content\Plugins\tagify-master\src\tagify.js" />
+    <Content Include="Content\Plugins\tagify-master\src\tagify.polyfills.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\Plugins\Bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\Plugins\Bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\Plugins\Bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\Plugins\Bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\Plugins\Bootstrap\js\bootstrap.js.map" />
+    <Content Include="Content\Plugins\FontAwesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Plugins\FontAwesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Plugins\FontAwesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Plugins\FontAwesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Plugins\FontAwesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\Plugins\JqueryConfirm\jquery-confirm.less" />
+    <Content Include="Content\Plugins\jQueryNiceSelect\scss\nice-select.scss" />
+    <Content Include="Content\Plugins\jQueryNiceSelect\scss\style.scss" />
+    <Content Include="Content\Plugins\jQueryNiceSelect\scss\_nice-select-prefixed.scss" />
+    <Content Include="Content\Plugins\jQueryNiceSelect\scss\_prism.scss" />
+    <Content Include="Content\Plugins\remixicon\.keep" />
+    <Content Include="Content\Plugins\remixicon\.keep 3" />
+    <Content Include="Content\Plugins\remixicon\remixicon.eot" />
+    <Content Include="Content\Plugins\remixicon\remixicon.glyph.json" />
+    <Content Include="Content\Plugins\remixicon\remixicon.less" />
+    <Content Include="Content\Plugins\remixicon\remixicon.ttf" />
+    <Content Include="Content\Plugins\remixicon\remixicon.woff" />
+    <Content Include="Content\Plugins\remixicon\remixicon.woff2" />
+    <Content Include="Content\Plugins\tagify-master\dist\tagify.vue" />
+    <Content Include="Content\Plugins\tagify-master\src\tagify.scss" />
+    <Content Include="fonts\Content-Bold.ttf" />
+    <Content Include="fonts\Content-Regular.ttf" />
+    <Content Include="fonts\OpenSans-Italic-VariableFont_wdth,wght.ttf" />
+    <Content Include="fonts\OpenSans-VariableFont_wdth,wght.ttf" />
+    <Content Include="Language\langs\en.json" />
+    <Content Include="Language\langs\kh.json" />
+    <Content Include="Content\Fonts\Content\Content-Bold.ttf" />
+    <Content Include="Content\Fonts\Content\Content-Regular.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Content\Main\workspace.code-workspace" />
+    <Content Include="Content\Main\_contentMenu.scss" />
+    <Content Include="Content\Main\_contentRightDialog.scss" />
+    <Content Include="Content\Main\_filterChip.scss" />
+    <Content Include="Content\Main\_filterRecord.scss" />
+    <Content Include="Content\Main\_loading.scss" />
+    <Content Include="Content\Main\_pagination.scss" />
+    <Content Include="Content\Main\_tab.scss" />
+    <Content Include="Content\Main\Login\Login.css.map" />
+    <Content Include="Content\Main\Login\Login.scss" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\Function\filter.js" />
+    <Content Include="Scripts\Function\ModalDialog.js" />
+    <Content Include="Scripts\Function\Module.js" />
+    <Content Include="Scripts\Function\pagination.js" />
+    <Content Include="Scripts\Function\translate.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Function\UI.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Views\KD\controlller.js" />
+    <Content Include="Scripts\Views\KD\data.js" />
+    <Content Include="Scripts\Views\KD\dom.js" />
+    <Content Include="Scripts\Views\KD\helper.js" />
+    <Content Include="Scripts\Views\KD\store.js" />
+    <Content Include="Scripts\Views\KD\view.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_leftMenu.cshtml" />
+    <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\Mineral\Index.cshtml" />
+    <Content Include="Views\KD\Index.cshtml" />
+    <Content Include="Views\KD\_Create.cshtml" />
+    <Content Include="Views\Map\Index.cshtml" />
+    <Content Include="Views\Loading\Index.cshtml" />
+    <Content Include="Views\Component\Index.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\_Create.cshtml" />
+    <Content Include="Views\Products\_Update.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49329</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44391/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

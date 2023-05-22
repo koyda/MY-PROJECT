@@ -1,0 +1,179 @@
+﻿@import url('component-params.css');
+
+.ocs-drop-list {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid transparent;
+    transition: border .2s ease-in-out;
+    border: 1px solid #cecece;
+}
+
+.ocs-drop-list .placeholder {
+    opacity: 0.6;
+}
+
+.ocs-drop-list.ocs-drop-show {
+    /*position: fixed;*/
+    height: auto !important;
+}
+
+.ocs-drop-list>.collape-icon {
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    transition: all .2s ease-in-out;
+}
+
+.ocs-drop-list.ocs-drop-show>.collape-icon::after {
+    content: "\f106";
+}
+
+.ocs-drop-list>.collape-icon::after {
+    content: "\f107";
+    font-family: "fontAwesome";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: transparent;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--tone);
+    cursor: pointer;
+    font-size: var(--lg);
+}
+
+.ocs-drop-list .ocs-drop-list-display {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-md);
+    line-height: 14px;
+    padding-right: 32px;
+    border-radius: 5px;
+    background: white;
+    transition: border .2s ease-in-out;
+    justify-content: center;
+}
+
+.ocs-drop-list.ocs-drop-show .ocs-drop-list-display {
+    border-color: transparent;
+}
+
+.original-drop-input {
+    background: no-repeat;
+    outline: none;
+    box-shadow: none;
+    opacity: 0 !important;
+    width: 0px;
+    height: 0px;
+    padding: 0px;
+    border: none;
+}
+
+.ocs-drop-list>input:focus,
+.ocs-drop-list>input:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.ocs-drop-list .drop-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 25px;
+    background: white;
+    opacity: 0;
+    transform: scale(1, 0);
+    transform-origin: top;
+    position: fixed;
+    border: 1px solid #dedede;
+    border-radius: var(--round-md);
+    box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 10%);
+    z-index: 1001;
+    overflow: hidden;
+}
+
+.ocs-drop-list.modal-mode .drop-content {
+    margin-top: 8px !important;
+    left: unset !important;
+    /* top: unset !important; */
+}
+
+.ocs-drop-list.ocs-drop-show .drop-content {
+    opacity: 1;
+    transform: scale(1, 1);
+    left:unset !important;
+}
+
+.ocs-drop-list .drop-content .content-list {
+    width: 100%;
+}
+
+.ocs-drop-list.ocs-drop-show .drop-content .content-list {
+    overflow-y: auto;
+}
+
+.ocs-drop-list .drop-content .content-list .content-list-item {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--tints);
+    line-height: 16px;
+    cursor: pointer;
+    transition: all 0s;
+    user-select: none;
+}
+
+.ocs-drop-list .drop-content .content-list .content-list-item.selected {
+    background: var(--secondary);
+    color: white;
+    border-color: var(--secondary);
+    pointer-events: none;
+}
+
+.ocs-drop-list .drop-content .content-list .content-list-item:hover {
+    background: var(--secondary);
+    color: white;
+    border-color: var(--secondary);
+    transition: all 0.3s ease-in;
+}
+
+.ocs-drop-list .drop-content .content-list .content-list-item:last-child {
+    border-bottom: none;
+}
+
+.ocs-drop-list .drop-content .drop-content-search {
+    width: 100%;
+    padding: var(--space-md);
+    position: relative;
+}
+
+.ocs-drop-list .drop-content .drop-content-search input {
+    width: 100%;
+    border: none;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--round-sm);
+    outline: none;
+    background: #f1f1f1;
+}
+
+.ocs-drop-list .drop-content .drop-content-search span.drop-content-search-icon {
+    position: absolute;
+    right: var(--space-md);
+    top: var(--space-md);
+    height: calc(100% - (var(--space-md) * 2));
+    display: flex;
+    align-items: center;
+    color: var(--tints);
+    padding-right: var(--space-sm);
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+.ocs-drop-list .drop-content .drop-content-search span.drop-content-search-icon:hover {
+    color: var(--shade);
+}

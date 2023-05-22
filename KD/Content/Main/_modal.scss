@@ -1,0 +1,355 @@
+.main-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #17212875;
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+
+    @include responsive(500px) {
+        padding: 0px;
+    }
+
+    .main-dialog {
+        background: #fff;
+        padding: 23px 0px 23px 0px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        user-select: none;
+        letter-spacing: 0px;
+
+        @include responsive(500px) {
+            border-radius: 0px;
+            width: 100% !important;
+            height: 100%;
+            padding: 16px 0px 40px 0px;
+        }
+
+        .main-dialog-header {
+            position: relative;
+            padding: 0px 25px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include responsive(500px) {
+                padding: 0px 16px;
+            }
+
+            .left {
+                display: flex;
+                align-items: center;
+                color: #23323e;
+                margin-left: -4px;
+
+                i {
+                    font-size: 16px;
+                    font-weight: bold;
+                    line-height: 15px;
+                }
+
+                .main-dialog-title {
+                    font-size: 15px;
+                    margin-left: 3px;
+                    font-weight: bold;
+                }
+            }
+
+            .right {
+                position: absolute;
+                top: -8px;
+                right: 14px;
+
+                @include responsive(500px) {
+                    right: 10px;
+                }
+
+                .main-btn-close-modal {
+                    position: relative;
+                    z-index: 0;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    border: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    outline: none;
+                    cursor: pointer;
+                    color: #75767e;
+                    transition: 0.25s ease-in-out;
+
+                    &:hover {
+                        background: #eef0f386;
+                    }
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                        transition: 0.2s ease-in-out;
+                        transform: scale(0.7);
+                    }
+
+                    &:active::before {
+                        background: #dfdfdf;
+                        transition: 0.15s ease-in-out;
+                        transform: scale(1);
+
+                        @include responsive(500px) {
+                            transition: 0.1s ease-in-out;
+                            transform: scale(0.8);
+                        }
+                    }
+
+                    & i {
+                        font-size: 14px;
+                        line-height: 14px;
+                        margin-left: 1px;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+
+        .main-dialog-body {
+            display: flex;
+            flex-direction: column;
+            margin: 16px 3px 22px 0px;
+            overflow-y: auto;
+        }
+
+        .main-dialog-body-scroll {
+            overflow: scroll;
+        }
+
+        .main-dialog-body-scroll::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+        }
+
+        .main-dialog-body-scroll::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+        }
+
+        .main-dialog-body-scroll:hover::-webkit-scrollbar-thumb {
+            background: #ced4da;
+        }
+    }
+
+    .main-dialog-s {
+        width: 320px;
+    }
+
+    .main-dialog-footer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        grid-gap: 0px 8px;
+        padding: 0px 25px;
+
+        @include responsive(500px) {
+            padding: 0px 16px;
+        }
+    }
+}
+
+.show-dialog {
+    animation: show-main-modal-dialog 0.5s ease-in-out;
+    z-index: 1000;
+    visibility: unset;
+    opacity: 1;
+
+    .main-dialog {
+        animation: show-main-dialog 0.3s ease-in-out;
+        transform: scale(1);
+    }
+}
+
+@keyframes show-main-modal-dialog {
+    from {
+        opacity: 0;
+        visibility: unset;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes show-main-dialog {
+    from {
+        opacity: 0.4;
+        visibility: unset;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hide-dialog {
+    animation: hide-main-modal-dialog 0.3s ease-in-out;
+    opacity: 0;
+
+    .main-dialog {
+        animation: hide-modal-dialog 0.25s ease-in-out;
+        transform: scale(0.4);
+    }
+}
+
+@keyframes hide-main-modal-dialog {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes hide-modal-dialog {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
+
+// s for use globle 
+.main-form-input {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 14px 14px;
+    padding: 0px 21px 0px 25px;
+
+    @include responsive(500px) {
+        grid-gap: 14px 14px;
+        padding: 0px 12px 0px 16px;
+    }
+}
+
+.main-group-form {
+    display: flex;
+    flex-direction: column;
+
+    .main-label-form {
+        color: #86888a;
+        font-size: 11px;
+        font-weight: 500;
+        margin-bottom: 4px;
+    }
+
+    .main-input-form {
+        font-size: 13px !important;
+        height: 40px;
+        padding: 0px 12px;
+        border-radius: 5px;
+        border: 1px solid #ced4da;
+        color: #495057;
+        outline: none;
+        transition: 0.25s ease-in-out;
+
+        @include responsive(500px) {
+            height: 45px;
+        }
+
+        &:focus {
+            border: 0.8px solid #46B7F8;
+        }
+    }
+}
+
+// e for use globle 
+// s for modal button
+.main-btn-use-in-modal {
+    height: 32px;
+    padding: 0px 12px 0px 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none !important;
+    border: none;
+    box-shadow: 0px 0px 5px #00000021;
+    user-select: none;
+
+    @include responsive(500px) {
+        width: 100% !important;
+        height: 45px !important;
+    }
+
+    &:hover {
+        opacity: 0.9;
+    }
+
+    .title-button {
+        font-size: 13px;
+        line-height: 13px;
+        margin-left: 4px;
+        pointer-events: none;
+    }
+
+    i {
+        font-size: 14px;
+        line-height: 13px;
+    }
+
+    i.icon-bold {
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 14px;
+        pointer-events: none;
+    }
+}
+
+.main-background-save {
+    background: #46B7F8 !important;
+    color: #fff !important
+}
+
+//loading
+.main-icon-loading {
+    animation: spin 1.5s linear infinite;
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(359deg);
+        }
+    }
+}
+
+.pointer-event-none {
+    pointer-events: none !important;
+}
+
+.main-bold {
+    font-weight: bold !important;
+}
+
+.icon-check {
+    font-size: 14px !important;
+}
+
+//loading
+// e for modal button

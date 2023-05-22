@@ -1,0 +1,132 @@
+
+$main-background: #fafafc;
+$main-color-primary: #4aadcf;
+$main-color-black: #161616;
+$main-color-black-blur: #6c757d26;
+$main-color-red: #FF7474;
+$main-color-white: #fff;
+$main-color-menu: #717171;
+$main-color-title-header: #545454;
+$main-background-by-primary: #f3f6f7;
+$colorScrollMenu : #d4d8dd;
+
+//form input
+$main-color-label: #8e8e8e;
+$main-color-placeholder: #b4b4b4;
+$main-color-input: #39393a;
+$main-color-border-input: #f3f3f3;
+$main-color-text-checkbox: #858585;
+$main-color-checkbox: #4aadcf;
+$main-color-not-checkbox: #e6e6e6;
+
+$main-size-font-header-table : 12px;
+
+$main-shadow-dialog : 1px 2px 10px #ebebeb;
+
+$black: #212121;
+$white: #ffffff;
+$grey: #757575;
+$success: #4caf50;
+$error: #e91e63;
+$warning: #ff9800;
+$g-background: linear-gradient(-45deg, #189c9b, #54d9f2);
+$nav-bk-color: #051e34;
+$background: #f6f7f9;
+$color1: #53bacd;
+$color2: #189c9b;
+$accentColor: #d7b952;
+$accentColor1: #f9d65e;
+$errorColor: #ff5722;
+$text-color: #4e4e4e;
+$sub-text-color: #757575;
+$border-color: #ced4da;
+$cardShadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+$font-remix: remixicon !important;
+$nav-bk-color: #051e34;
+$nav-bdr-color: #1c3a57;
+$nav-hover-color: #474e5561;
+$nav-text-color: #d1d6db;
+$nav-active-menu: red;
+$nav-color-black-menu: #1c2227;
+$color-border-to-left-head: #6a6a6a5c;
+$anim: 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+
+@mixin navBtnLinkColor {
+    -webkit-text-fill-color: $nav-text-color;
+    color: $nav-text-color;
+}
+
+@mixin w-720 {
+    @media only screen and (max-width: 720px) {
+        @content;
+    }
+}
+
+// text box ellipsis
+@mixin ellipsis($langth) {
+    display: -webkit-box;
+    -webkit-line-clamp: $langth;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// text color black [black, white, grey, success, error, warning]
+@mixin text-color($type) {
+    @if $type ==black {
+        color: $black;
+        -webkit-text-fill-color: $black;
+    }
+
+    @else if $type ==white {
+        color: $white;
+        -webkit-text-fill-color: $white;
+    }
+
+    @else if $type ==grey {
+        color: $grey;
+        -webkit-text-fill-color: $grey;
+    }
+
+    @else if $type ==success {
+        color: $success;
+        -webkit-text-fill-color: $success;
+    }
+
+    @else if $type ==error {
+        color: $error;
+        -webkit-text-fill-color: $error;
+    }
+
+    @else if $type ==warning {
+        color: $warning;
+        -webkit-text-fill-color: $warning;
+    }
+}
+
+// fill color black [black, white, grey, success, error, warning]
+@mixin background-color($type) {
+    @if $type ==black {
+        background: $black;
+    }
+
+    @else if $type ==white {
+        background: $white;
+    }
+
+    @else if $type ==grey {
+        background: $grey;
+    }
+
+    @else if $type ==success {
+        background: $success;
+    }
+
+    @else if $type ==error {
+        background: $error;
+    }
+
+    @else if $type ==warning {
+        background: $warning;
+    }
+}

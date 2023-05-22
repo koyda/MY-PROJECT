@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .nav-view-map{
+        width:80%;
+        height:80%;
+        border-radius:10px;
+        border:1px solid #eee;
+    }
+</style>
+<div class="main-container">
+    <div class="main-container-view-list" style="height:600px;" id="map_v">
+
+    </div>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" defer></script>
+<script>
+        function initMap() {
+            let currentPos = { lat: -25.344, lng: 131.031 };
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(pos => {
+                    currentPos = {
+                        lat: pos.coords.latitude,
+                        lng: pos.coords.longitude
+                    }
+                    const map = new google.maps.Map(document.getElementById("map_v"), {
+                        zoom: 12,
+                        center: currentPos,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    });
+                    let marker = new google.maps.Marker({
+                        map: map
+                    });
+                    map.addListener('click', e => {
+                        const target = { lat: e.latLng.lat(), lng: e.latLng.lng() }
+                        marker.setPosition(target);
+                    })
+                });
+            }
+        }
+        window.initMap = initMap;
+</script>
+
+

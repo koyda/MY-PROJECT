@@ -1,0 +1,242 @@
+.main-container-right-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $main-color-black-blur;
+    display: flex !important;
+    justify-content: flex-end;
+    backdrop-filter: blur(0.5px);
+    z-index: -100;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+
+    .main-content-dialog { 
+        position: relative;
+        min-width: 330px;
+        width: 330px;
+        height: 100%;
+        background: $main-color-white;
+        display: flex !important;
+        flex-direction: column;
+        transform: translate(90%, 0);
+        opacity: 0;
+        transition: all 0.35s ease-in-out;
+
+        .main-header {
+            min-height: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+
+            border-bottom: 1px solid #f8f8f8;
+
+            .left {
+                display: flex;
+                align-items: center;
+
+                .main-header-title {
+                    font-size: 15px;
+                    font-weight: bold;
+                    color: $main-color-menu;
+                }
+            }
+
+            .right {
+                .main-btn-close-right-dialog {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: -14px;
+                    transition: all 0.15s ease-in-out;
+
+                    &:hover{
+                        background: $main-background-by-primary;
+                    }
+
+                    i {
+                        font-size: 14px;
+                        line-height: 14px;
+                        pointer-events: none;
+                        color: $main-color-menu;
+                    }
+                }
+            }
+        }
+
+        .main-body {
+            padding: 20px 25px;
+        }
+
+        // .main-group-input {
+        //     display: flex;
+        //     flex-direction: column;
+        // }
+
+        .main_scroll_right_dialog {
+            height: calc(100% - 180px);
+            padding: 0px 18px 20px 25px;
+            margin-top: 20px;
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                width: 6px;
+                height: 6px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 4px;
+                border: 2px solid $main-color-white;
+                background-clip: padding-box;
+            }
+
+            &:hover::-webkit-scrollbar-thumb {
+                background: $colorScrollMenu;
+            }
+        }
+
+        .main-footer {
+            height: 95px;
+            padding: 0px 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .main-btn-right-dialog {
+                width: 100%;
+                height: 45px;
+                border-radius: 10px;
+                background: $main-color-primary;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                transition: 0.25s ease-in-out;
+
+                .main-title {
+                    color: $main-color-white;
+                    font-size: 13px;
+                    line-height: 13px;
+                }
+
+                &:hover {
+                    opacity: 0.9;
+                }
+            }
+        }
+
+        .main-footer-has-gird {
+            height: 95px;
+            padding: 0px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            grid-gap: 8px;
+
+            .main-btn-right-dialog {
+                height: 40px;
+                padding: 0px 25px 0px 28px;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.25s ease-in-out;
+
+                .main-title {
+                    font-size: 13px;
+                    line-height: 12px;
+                }
+
+                &:hover {
+                    opacity: 0.9;
+                }
+            }
+
+            .color-save {
+                background: $main-color-primary;
+                color: $main-color-white;
+            }
+
+            .color-close {
+                border: 1px solid $main-background-by-primary;
+                color: $main-color-menu;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            width: 100%;
+        }
+
+
+        //s loading in right dialog
+        .main-loading-in-right-dialog {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+
+            .box-loader-in-right-dialog {
+                height: 16px;
+                width: 16px;
+                animation: animation-rotate-right-dialog 0.8s linear infinite;
+                transform: rotate(0deg);
+            }
+
+            .box-loader-in-right-dialog:before,
+            .box-loader-in-right-dialog:after {
+                border-radius: 50%;
+                content: "";
+                display: block;
+                height: 7px;
+                width: 7px;
+            }
+
+            .box-loader-in-right-dialog:before {
+                background-color: #FF6B6B;
+                box-shadow: 9px 0 0 #91d444;
+                margin-bottom: 2px;
+            }
+
+            .box-loader-in-right-dialog:after {
+                background-color: #91d444;
+                box-shadow: 9px 0 0 #ff6b6b;
+            }
+
+            @keyframes animation-rotate-right-dialog {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+
+        //e loading in right dialog
+
+    }
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: unset;
+        z-index: 10000;
+
+        .main-content-dialog {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@mixin phone500 {
+    @media (max-width: #{500px}) {
+        @content;
+    }
+}
+
+@mixin responsive($width) {
+    @media (max-width: #{$width}) {
+        @content;
+    }
+}

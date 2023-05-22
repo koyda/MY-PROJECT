@@ -1,0 +1,217 @@
+.nav-filter-chip {
+    position: relative;
+    user-select: none;
+    transition: 0.3s ease-in-out;
+
+    .btn-filter-chip {
+        width: 42px;
+        height: 40px;
+        outline: none;
+        border: 0px solid #fff;
+        border-radius: $main-border-radius;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $main-background-by-primary;
+        color: $main-color-menu;
+
+        @include responsive(500px) {
+            padding: 0px;
+            width: 38px;
+            justify-content: center;
+        }
+
+        i {
+            font-size: 14px;
+            line-height: 14px;
+            pointer-events: none;
+        }
+
+        img {
+            height: 14px;
+        }
+
+        .text {
+            font-size: 12px;
+            line-height: 12px;
+            margin-left: 4px;
+            pointer-events: none;
+
+            @include responsive(500px) {
+                display: none;
+            }
+        }
+    }
+
+    .nav-dialog-filter-chip {
+        position: absolute;
+        top: 48px;
+        left: 0px;
+        width: 200px;
+        padding: 20px 22px;
+        border-radius: 12px;
+        box-shadow: $main-shadow-dialog;
+        background: $main-color-white;
+        transform: translate(-8px, -8px);
+        opacity: 0;
+        z-index: -100;
+        transition: 0.2s ease-in-out;
+
+        .nav-head {
+            position: relative;
+            display: grid;
+            grid-template-columns: auto 30px;
+
+            .left {
+                display: flex;
+                color: $main-color-text-head;
+
+                i {
+                    font-size: 15px;
+                    line-height: 14px;
+                }
+
+                .text {
+                    font-size: 14px;
+                    line-height: 14px;
+                    margin-left: 4px;
+                    font-weight: bold;
+                }
+            }
+
+            .right {
+                position: absolute;
+                top: -10px;
+                right: -12px;
+
+                .ocs-action-btn-close-chip {
+                    position: relative;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    border: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 0;
+                    background: transparent;
+                    outline: none;
+                    cursor: pointer;
+                    color: $main-color-in-btn-and-input;
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                        transition: 0.2s ease-in-out;
+                        transform: scale(0.6);
+
+                        @include responsive(500px) {
+                            transition: 0.15s ease-in-out;
+                            transform: scale(1);
+                        }
+                    }
+
+                    &:hover::before {
+                        background: $color-action-button;
+                        box-shadow: $shadow-button;
+                        transform: scale(1);
+                    }
+
+                    &:active::before {
+                        background: $color-action-button;
+                        box-shadow: $shadow-button;
+                        transition: 0.15s ease-in-out;
+                        transform: scale(0.6);
+
+                        @include responsive(500px) {
+                            transition: 0.1s ease-in-out;
+                            transform: scale(0.8);
+                        }
+                    }
+
+                    & i {
+                        font-size: 14px;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+
+        .nav-footer {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            grid-gap: 6px;
+
+            .btn-close-dialog-chip {
+                height: 38px;
+                padding: 0px 16px 0px 19px;
+                border-radius: 9px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.25s ease-in-out;
+                border: 1px solid $main-background-by-primary;
+                color: $main-color-menu;
+                cursor: pointer;
+
+                &:hover{
+                    opacity: 0.9;
+                }
+            }
+
+            .btn-apply-dialog-chip {
+                height: 38px;
+                padding: 0px 20px 0px 22px;
+                border-radius: 9px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.25s ease-in-out;
+                white-space: nowrap;
+                color: $main-color-white;
+                background: $main-color-primary;
+                cursor: pointer;
+
+                &:hover{
+                    opacity: 0.9;
+                }
+            }
+        }
+
+        .nav-content-chip {
+            margin-top: 8px;
+        }
+    }
+
+    &.show {
+        .nav-dialog-filter-chip {
+            animation: show-filter-chip 0.15s ease-in-out;
+            opacity: 1;
+            z-index: 100;
+            transform: scale(1);
+            transform: translate(0px, 0px);
+
+            @keyframes show-filter-chip {
+                from {
+                    opacity: 0;
+                    z-index: 0;
+                    transform: scale(0.8);
+                    transform: translate(-8px, -8px);
+                }
+
+                to {
+                    opacity: 1;
+                    z-index: 100;
+                    transform: scale(1);
+                    transform: translate(0px, 0px);
+
+                }
+            }
+        }
+    }
+
+}
