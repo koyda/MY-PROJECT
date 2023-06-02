@@ -24,7 +24,7 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background: #4aadcf;
+  background: #3094B6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -117,11 +117,15 @@
 }
 
 .main-login-wrapper .main-login-content .main-login-right .header .logo {
-  height: 70px;
+  height: 80px;
+  width: 80px;
+  border: 2px solid #f2f2f26b;
+  border-radius: 50%;
+  padding: 14px;
 }
 
 .main-login-wrapper .main-login-content .main-login-right .header .logo img {
-  height: 70px;
+  height: 100%;
 }
 
 .main-login-wrapper .main-login-content .main-login-right .header .title {
@@ -178,6 +182,26 @@
   color: #161616;
   -webkit-transition: 0.15s ease-in-out;
   transition: 0.15s ease-in-out;
+}
+
+.main-login-wrapper .main-login-content .main-login-right .body .main-login-form-group .form-control-auth::-webkit-input-placeholder {
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.main-login-wrapper .main-login-content .main-login-right .body .main-login-form-group .form-control-auth:-ms-input-placeholder {
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.main-login-wrapper .main-login-content .main-login-right .body .main-login-form-group .form-control-auth::-ms-input-placeholder {
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.main-login-wrapper .main-login-content .main-login-right .body .main-login-form-group .form-control-auth::placeholder {
+  font-size: 12px;
+  line-height: 12px;
 }
 
 .main-login-wrapper .main-login-content .main-login-right .body .main-login-form-group .form-control-auth:focus {
@@ -371,7 +395,7 @@
 }
 
 .main-login-wrapper .auth-forgot-pasword:hover {
-  color: #189c9b;
+  color: #4aadcf;
 }
 
 .field-validation-error {

@@ -25,7 +25,7 @@ $main_focus_border_color :#4aaecf83;
     overflow: hidden;
     // background: rgb(2,0,36);
     // background: linear-gradient(145deg, rgba(2,0,36,1) 0%, #4caed1 0%, #d16f4c 100%);
-    background: $main_primaty;
+    background: #3094B6;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,9 +76,13 @@ $main_focus_border_color :#4aaecf83;
                 align-items: center;
 
                 .logo{
-                    height: 70px;
+                    height: 80px;
+                    width: 80px;
+                    border: 2px solid #f2f2f26b;
+                    border-radius: 50%;
+                    padding: 14px;
                     img{
-                        height: 70px;
+                        height: 100%;
                     }
                 }
 
@@ -120,6 +124,11 @@ $main_focus_border_color :#4aaecf83;
                         line-height: 13px;
                         color: #161616;
                         transition: 0.15s ease-in-out;
+
+                        &::placeholder{
+                            font-size: 12px;
+                            line-height: 12px;  
+                        }
 
                         &:focus {
                             border: 1px solid $main_focus_border_color;
@@ -294,7 +303,7 @@ $main_focus_border_color :#4aaecf83;
         transition: 0.25s ease-in-out;
 
         &:hover {
-            color: #189c9b;
+            color: $main_primaty;
         }
     }
 }
