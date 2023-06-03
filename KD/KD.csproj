@@ -146,6 +146,8 @@
     <Content Include="Content\Assets\icon\facebook %281%29.png" />
     <Content Include="Content\Assets\icon\facebook.png" />
     <Content Include="Content\Assets\icon\filter.png" />
+    <Content Include="Content\Assets\icon\full-screen.png" />
+    <Content Include="Content\Assets\icon\full-screen.svg" />
     <Content Include="Content\Assets\icon\maxLayout.png" />
     <Content Include="Content\Assets\icon\minLayout.png" />
     <Content Include="Content\Assets\icon\notification.png" />

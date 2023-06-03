@@ -1,0 +1,459 @@
+// main color
+$main-color: #03a9f4;
+$color-white: #fff;
+$color-border-buttom: #f9f9f9;
+$color-text : #393d41;
+$back-color-main-top-header: #fff;
+
+// color button
+$color-action-button: #eef0f3;
+$shadow-button: 0px 0px 4px #eef0f349;
+$color-dialog: #fff;
+$box-shadow-dialog: 0px 2px 10px #e0e0e0;
+
+// dialog translate
+$shadow-dialog-translate: -1px 2px 10px #ebebeb;
+$color-back-dialog-translate : #fff;
+// color notification
+$color-backgroud-show-notification : #ea653f;
+
+// dailog profile
+$shadow-dialog-profile: -1px 2px 10px #ebebeb;
+$color-hover-text : #03a9f4;
+$color-detaul-border : #03a9f421;
+$color-border-btn-logout: #f1f1f1;
+$color-text-text-btn-logout: #808c96;
+$color-btn-logout-when-hover: #03a9f4;
+$color-frame-profile: linear-gradient(90deg, #30b5d1, #ee6665);
+
+
+.main-top-header {
+    position: sticky;
+    top: 0;
+    height: 80px;
+    border-bottom: 1px solid $color-border-buttom;
+    z-index: 999;
+
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 0px 4px;
+    }
+}
+
+.main-top-head-container {
+    align-items: stretch;
+    padding: 0 25px 0px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    background-color: #fbfcfd;
+
+    @include responsive(500px) {
+        padding: 0 12px 0px 4px;
+    }
+
+    .main-show-featur{
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: bold;
+        color: #161616;
+        white-space: nowrap;
+    }
+}
+
+
+// s btn top header
+
+// s side btn action header
+.main-btn-action-header{
+    display: flex;
+    grid-gap: 1px;
+    
+    .main-btn-size{
+        width: 38px;
+        height: 38px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main-btn-translate{
+        transition: 0.25s ease-in-out;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid #f2f2f2;
+        cursor: pointer;
+
+        &:hover{
+            border: 2px solid #46b7f869;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            padding: 2px;
+            border-radius: 50%;
+            vertical-align: unset;
+            transition: 0.15s ease-in-out;
+        }
+        &:active img{
+            transform: scale(0.8);
+        }
+    }
+    .main-btn-resize-screen{
+        
+        img{
+            height: 12px;
+            cursor: pointer;
+        }
+    }
+    .main-btn-notification{
+        position: relative;
+        
+        img{
+            height: 12px;
+            cursor: pointer;
+        }
+        .main-box-has-notification{
+            position: absolute;
+            top: 4px;
+            right: 0px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            border: 1px solid #fbfcfd;
+            background: #FF7474;
+        }
+    }
+    .main-btn-profile{
+        width: 38px;
+        height: 38px;
+        border-radius: 16px;
+        background: #F3F6F7;
+        cursor: pointer;
+
+        img{
+            width: 100%;
+            height: 100%;
+            padding: 4px;
+            object-fit: cover;
+        }
+    }
+}
+// e side btn action header
+.main-action-btn {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    color: #5d6073;
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        transform: scale(0.85);
+        transition: 0.15s ease-in-out;
+
+        @include responsive(500px) {
+            transition: 0.15s ease-in-out;
+            transform: scale(1);
+        }
+    }
+
+    &:hover::before {
+        // background: $color-action-button;
+        // box-shadow: $shadow-button;
+        // transform: scale(1);
+    }
+
+    &:active::before {
+        // transition: 0.15s ease-in-out;
+        background: $color-action-button;
+        box-shadow: $shadow-button;
+        transform: scale(1);
+
+        @include responsive(500px) {
+            transition: 0.1s ease-in-out;
+            transform: scale(1);
+        }
+    }
+
+    & i {
+        font-size: 14px;
+        margin-top: 0.4px;
+        z-index: 1;
+    }
+
+    &:hover {
+        transition: 0.15s;
+        color: #212a31;
+    }
+}
+
+.main-action-dark-mode>i {
+    font-size: 16px;
+    line-height: 15px;
+}
+
+.main-action-dark-mode:hover>i {
+    transform: rotate(60deg);
+    animation: hover-on-btn-dark-mode 0.5s;
+}
+
+@keyframes hover-on-btn-dark-mode {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(60deg);
+    }
+}
+
+// e btn top header
+// s btn notification
+
+.icon-notification {
+    z-index: 1;
+    position: relative;
+
+    .show-notification {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        top: 3px;
+        right: 1px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+        background: $color-backgroud-show-notification;
+        color: $color-white;
+    }
+}
+
+// e btn notification
+// s content translate
+.main-content-translate {
+    position: relative;
+
+    .main-dialog-translate {
+        position: absolute;
+        width: 120px;
+        padding: 14px;
+        top: 55px;
+        right: 15px;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 4px;
+        border-radius: 14px;
+        box-shadow: $shadow-dialog-translate;
+        background: $color-back-dialog-translate;
+        transform: scale(0.9) translate(5px, -5px);
+        opacity: 0;
+        z-index: 1;
+        visibility: hidden;
+        user-select: none;
+        transition: all 0.15s ease-in-out;
+
+        .nav-languag {
+            display: flex;
+            align-items: center;
+            height: 25px;
+            cursor: pointer;
+
+            .image-flag {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                transition: all 0.25s;
+                border: 1px solid $color-detaul-border;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    padding: 2px;
+                }
+            }
+
+            &:hover>.image-flag {
+                border: 1px solid $color-hover-text;
+            }
+
+            .text-flag {
+                font-size: 13px;
+                line-height: 13px;
+                color: $color-text;
+                margin-left: 5px;
+                letter-spacing: 0px;
+            }
+
+            //  for js
+            &.acitve-nav-languag {
+                pointer-events: none;
+                cursor: none;
+
+                .image-flag {
+                    border: 1px solid $color-hover-text;
+                }
+
+                .text-flag {
+                    color: $color-hover-text;
+                }
+            }
+
+            //for js
+        }
+    }
+}
+
+// for js 
+.show>.main-dialog-translate {
+    z-index: unset;
+    opacity: unset;
+    visibility: visible;
+    transform: scale(1) translate(0, 0);
+}
+
+// for js 
+
+//e content translate
+//s content main profile
+.main-content-profile {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+
+    .main-profile {
+        position: relative;
+        width: 33px;
+        height: 33px;
+        border-radius: 50%;
+        z-index: 100;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transition: all 0.3s;
+            transform: scale(1);
+            background: $color-action-button;
+            z-index: -1;
+        }
+
+        &:hover::before {
+            transform: scale(1.15);
+        }
+    }
+
+    .main-dialog-profile {
+        position: absolute;
+        width: 180px;
+        top: 55px;
+        right: 0px;
+        background: $color-white;
+        box-shadow: $shadow-dialog-profile;
+        border-radius: 14px;
+        padding: 22px 14px;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 6px;
+        align-items: center;
+        transition: all 0.2s ease-in-out;
+        transform: scale(0.9) translate(10px, -10px);
+        opacity: 0;
+        z-index: 1;
+        visibility: hidden;
+
+        .profile {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: $color-frame-profile;
+            padding: 2px;
+
+            .frame-profile {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: $color-white;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    padding: 2px;
+                    pointer-events: none;
+                }
+            }
+        }
+
+        .username {
+            font-size: 14px;
+            letter-spacing: 0px;
+            color: $color-text;
+        }
+
+        .buttom-logout {
+            padding: 0px 14px 0px 16px;
+            height: 33px;
+            border-radius: 33px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            line-height: 13px;
+            border: 1px solid $color-border-btn-logout;
+            color: $color-text-text-btn-logout;
+            letter-spacing: 0.5px;
+            transition: 0.25s ease-in-out;
+
+            &:hover {
+                background: $main-color;
+                color: $color-white;
+                cursor: pointer;
+            }
+
+            &:active {
+                transition: 0.15s ease-in-out;
+                transform: scale(0.8);
+            }
+        }
+    }
+}
+
+// for js 
+.show>.main-dialog-profile {
+    transform: unset;
+    opacity: unset;
+    z-index: unset;
+    visibility: visible;
+}
+
+// for js 
+//e content main profile

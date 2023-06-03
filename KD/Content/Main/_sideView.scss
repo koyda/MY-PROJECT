@@ -1,0 +1,296 @@
+$back-content-view : #fff;
+$color-back-contanier-list-view : #fff;
+$color-back-header-title : #f6f7f9;
+
+$main-border-btn-and-input :1px solid #ced4da;
+$main-border-radius : 10px;
+$main-border-radius-dialog : 8px;
+$main-height-btn-and-input : 35px;
+$main-color-in-btn-and-input : #6d6d6d;
+$main-color-text-head: #555f67;
+
+//s record 
+$color-border-record-display : #ced4da;
+$color-icon-record: #6d6d6d;
+$color-back-content-select : #fff;
+$color-item-select : #5f5f5f;
+$color-back-item-hover : #bdbdbd21;
+$color-item-select-hover : #151516;
+$color-text-befor-filter-record : #555f67;
+//e record 
+
+.main-wrapper {
+
+    .main-head-title {
+        position: sticky;
+        top: 0px;
+        height: 80px;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        z-index: 100;
+        padding: 0px 30px;
+        background: #fafafa;
+
+        @include responsive(500px) {
+            padding: 0px 12px 0px 16px;
+        }
+
+        .main-left {
+            display: flex;
+            align-items: center;
+            user-select: none;
+
+            .main-icon-head {
+                height: 50px;
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+            }
+
+            .main-add-size-1px {
+                font-size: 19px;
+            }
+
+            .main-add-size-2px {
+                font-size: 20px;
+            }
+
+            .main-add-size-3px {
+                font-size: 21px;
+            }
+
+            .main-title {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                line-height: 16px;
+                font-weight: bold;
+                color: #161616;
+            }
+        }
+    }
+}
+
+// s container header filter
+.main-head-list-filter {
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+    height: 56px;
+    margin: 0px 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    grid-gap: 6px;
+    box-sizing: border-box;
+    background: $main-background;
+
+    .left {
+        display: flex;
+        align-items: center;
+        grid-gap: 0px 6px;
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        grid-gap: 0px 6px;
+    }
+}
+
+// e container header filter
+
+.main-container {
+    position: relative;
+    min-height: calc(100vh - 70px);
+    box-sizing: border-box;
+    z-index: 99;
+}
+
+// s container view list
+.main-container-view-list {
+    margin: 30px;
+    margin-top: 0px;
+    height: calc(100% - 160px);
+    // height: 150%;
+
+    @include responsive(500px) {
+        margin: 0px;
+        padding: 16px 12px 16px 16px;
+    }
+}
+
+.main-container-list-table {
+    overflow: hidden;
+    // height: calc(100% - 136px);
+}
+
+.table-responsive {
+    overflow: hidden;
+}
+
+// e container view list
+// s filter search
+.btn-refresh-list {
+    width: 38px;
+    height: 35px;
+    min-width: 38px;
+    height: $main-height-btn-and-input;
+    border-radius: $main-border-radius;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $main-color-in-btn-and-input;
+    outline: none;
+    border: $main-border-btn-and-input;
+
+    i {
+        font-size: 13px;
+        line-height: 13px;
+        margin-left: 1px;
+    }
+}
+
+.main-btn-reload-again {
+    width: 42px;
+    height: 40px;
+    outline: none;
+    border: 0px solid #fff;
+    border-radius: $main-border-radius;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $main-background-by-primary;
+    color: $main-color-menu;
+
+    i {
+        font-size: 14px;
+        line-height: 14px;
+        pointer-events: none;
+    }
+
+    img {
+        height: 14px;
+    }
+}
+
+.nav-filter-search {
+    display: flex;
+    align-items: center;
+    width: 220px;
+    height: 40px;
+    padding: 0px 4px;
+    border: 0px solid transparent;
+    border-radius: 10px;
+    background: $main-background-by-primary;
+
+    @include responsive(500px) {
+        width: 140px;
+    }
+
+    .icon-search {
+        min-width: 40px;
+        width: 40px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        line-height: 15px;
+        color: $main-color-menu;
+        transition: 0.3s ease-in-out;
+    }
+
+    &.is-has-search {
+        color: $main-color-primary;
+    }
+
+    .form-control-search::placeholder {
+        font-size: 12px;
+        color: $main-color-menu;
+        letter-spacing: 0.5px;
+    }
+
+    .form-control-search {
+        height: 100%;
+        width: 100%;
+        font-size: 14px;
+        color: $main-color-in-btn-and-input;
+        outline: none;
+        border: 0px;
+        background: transparent;
+    }
+
+
+    .nav-btn-clear-search {
+        min-width: 40px;
+        width: 40px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #a3a3a3;
+        transform: scale(0);
+        opacity: 0;
+        transition: 0.3s ease-in-out;
+
+        .main-btn-clear-search {
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 13px;
+            line-height: 13px;
+            color: #8e8e8e;
+
+            i {
+                margin-left: 0.5px;
+            }
+        }
+    }
+}
+
+//e filter search
+// s footer record
+.main-nav-footer-view-list {
+    height: 80px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+
+    @include responsive(500px) {
+        flex-direction: column;
+        grid-gap: 12px 0px;
+    }
+
+    .left {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        color: $main-color-text-head;
+
+        .main-text-record {
+            opacity: 0.9;
+        }
+
+        .main-space {
+            padding: 0px 4px;
+            font-size: 12px;
+            line-height: 12px;
+            opacity: 0.8;
+        }
+
+        .main-record-count {
+            font-weight: bold;
+        }
+    }
+}
+
+// e footer record
