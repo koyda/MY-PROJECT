@@ -329,10 +329,13 @@ table.dataTable thead .sorting_asc:before,
 table.dataTable thead .sorting_desc:before,
 table.dataTable thead .sorting_asc_disabled:before,
 table.dataTable thead .sorting_desc_disabled:before {
-    right: 1em;
+    /* right: 1em;
     content: "↑";
-    font-size: 11px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 500; */
+    font-family: "remixicon";
+    right: 1em;
+    content: "\ea78";
 }
 
 table.dataTable thead .sorting:after,
@@ -340,10 +343,13 @@ table.dataTable thead .sorting_asc:after,
 table.dataTable thead .sorting_desc:after,
 table.dataTable thead .sorting_asc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:after {
-    right: .5em;
+    /* right: .6em;
     content: "↓";
-    font-size: 11px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 500; */
+    font-family: "remixicon";
+    right: 1em;
+    content: "\ea4e";
 }
 
 table.dataTable thead .sorting_asc:before,
@@ -504,7 +510,9 @@ table.dataTable thead .sorting_asc_disabled:before,
 table.dataTable thead .sorting_asc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:before,
 table.dataTable thead .sorting_desc_disabled:after {
-    bottom: unset !important;
+    bottom: 12px !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
 }
 
 table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
