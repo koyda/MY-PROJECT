@@ -48,7 +48,7 @@ $color-frame-profile: linear-gradient(90deg, #30b5d1, #ee6665);
     align-items: center;
     justify-content: space-between;
     height: 80px;
-    background-color: #fbfcfd;
+    background-color: #fff;
 
     @include responsive(500px) {
         padding: 0 12px 0px 4px;

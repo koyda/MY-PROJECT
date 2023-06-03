@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Products";
+    ViewBag.Title = "Categories";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section Styles{
@@ -10,73 +10,79 @@
 
 
 <style>
-    .box-image-detail{
-        width:100%;
-        height:600px;
+    .box-image-detail {
+        width: 100%;
+        height: 600px;
     }
-    .box-image-detail img{
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        border-radius:16px;
-    }
+
+        .box-image-detail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        }
 </style>
 
 <link href="~/Content/Main/Component/drop-list.css" rel="stylesheet" />
 
 <div class="main-container main-page-transition" id="is_main_page">
 
-    <div class="main-head-title">
-        <div class="main-left">
-            <div class="main-icon-head"></div><div class="main-title">Products</div>
-        </div>
-        <div class="main-middle"></div>
-        <div class="ocs-right">
-            <button class="main-btn-action only-icon-500 main_action_ripple blue" main-color-ripple="#ffffff3b" id="btn_add_new"><i class="ri-add-line icon-bold"></i><div class="title-button" ocs-data-tag="btn_add">បង្កើត</div></button>
-        </div>
-    </div>
+    @*<div class="main-head-title">
+            <div class="main-left">
+                <div class="main-icon-head"></div><div class="main-title">Products</div>
+            </div>
+            <div class="main-middle"></div>
+            <div class="ocs-right">
+                <button class="main-btn-action only-icon-500 main_action_ripple blue" main-color-ripple="#ffffff3b" id="btn_add_new"><i class="ri-add-line icon-bold"></i><div class="title-button" ocs-data-tag="btn_add">បង្កើត</div></button>
+            </div>
+        </div>*@
 
     <div class="main-head-list-filter">
         <div class="left">
-            <div class="nav-filter-record">
-                <div class="main-select-record" id="list_filter_record">
-                    <div class="main_max_screen_cursor_pointer btn-record-display main_action_ripple" main-color-ripple="#ffffff3b">
-                        <div class="text-record-display">10</div>
-                        <span class="icon"><i class="ri-arrow-down-s-line"></i></span>
-                    </div>
-                    <div class="main_max_screen_cursor_pointer content-item-select">
-                        <span class="item">10</span>
-                        <span class="item">20</span>
-                        <span class="item">50</span>
-                        <span class="item">100</span>
-                    </div>
-                </div>
-            </div>
-            <div class="nav-filter-chip">
-                <button class="main_max_screen_cursor_pointer main-tooltip btn-filter-chip main_action_ripple" main-color-ripple="#ffffff3b" title="ច្រោះរក" id="btn_filter_chip">
-                    <img src="~/Content/Assets/icon/filter.png" />
-                </button>
-                <div class="nav-dialog-filter-chip" style="width:250px;">
-                    <div class="nav-head">
-                        <div class="left"><div class="text">ច្រោះរក</div></div>
-                    </div>
-                    <div class="nav-content-chip" style="height:60px;">
-                    </div>
-                    <div class="nav-footer">
-                        <div class="main_action_ripple btn-close-dialog-chip">បិទ</div>
-                        <div class="main_action_ripple btn-apply-dialog-chip" main-color-ripple="#ffffff3b">អនុវត្ត</div>
-                    </div>
-                </div>
+            <div class="nav-filter-search" id="btn_main_search">
+                <div class="main_max_screen_cursor_pointer icon-search main-tooltip" title="ស្វែងរក"><i class="ri-search-2-line"></i></div>
+                <input type="text" class="form-control-search" placeholder="ស្វែងរក" />@*<div class="nav-btn-clear-search main-tooltip" title="លុប"><div class="main_max_screen_cursor_pointer main-btn-clear-search"><i class="ri-close-fill"></i></div></div>*@
+                <div class="main-btn-dialog-filter main_action_ripple" main-color-ripple="#f3f6f77a"><img src="~/Content/Assets/icon/filter.png" /></div>
             </div>
         </div>
-        <div class="right">
-            <button class="main-tooltip main-btn-reload-again main_action_ripple" main-color-ripple="#ffffff3b" id="btn_reload" title="ទាញម្ដងទៀត"><i class="ri-refresh-line"></i></button>
-            <div class="nav-filter-search" id="btn_main_search"><div class="main_max_screen_cursor_pointer icon-search main-tooltip" title="ស្វែងរក"><i class="ri-search-2-line"></i></div><input type="text" class="form-control-search" placeholder="ស្វែងរក" /><div class="nav-btn-clear-search main-tooltip" title="លុប"><div class="main_max_screen_cursor_pointer main-btn-clear-search"><i class="ri-close-fill"></i></div></div></div>
-        </div>
+        <div class="right"><button class="main-btn-action only-icon-500 main_action_ripple blue" main-color-ripple="#ffffff3b" id="btn_add_new"><i class="ri-add-circle-line"></i><div class="title-button" ocs-data-tag="btn_add">បង្កើត</div></button></div>
+        @*<div class="left">
+                <div class="nav-filter-record">
+                    <div class="main-select-record" id="list_filter_record">
+                        <div class="main_max_screen_cursor_pointer btn-record-display main_action_ripple" main-color-ripple="#ffffff3b">
+                            <div class="text-record-display">10</div>
+                            <span class="icon"><i class="ri-arrow-down-s-line"></i></span>
+                        </div>
+                        <div class="main_max_screen_cursor_pointer content-item-select">
+                            <span class="item">10</span>
+                            <span class="item">20</span>
+                            <span class="item">50</span>
+                            <span class="item">100</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-filter-chip">
+                    <button class="main_max_screen_cursor_pointer main-tooltip btn-filter-chip main_action_ripple" main-color-ripple="#ffffff3b" title="ច្រោះរក" id="btn_filter_chip">
+                        <img src="~/Content/Assets/icon/filter.png" />
+                    </button>
+                    <div class="nav-dialog-filter-chip" style="width:250px;">
+                        <div class="nav-head">
+                            <div class="left"><div class="text">ច្រោះរក</div></div>
+                        </div>
+                        <div class="nav-content-chip" style="height:60px;">
+                        </div>
+                        <div class="nav-footer">
+                            <div class="main_action_ripple btn-close-dialog-chip">បិទ</div>
+                            <div class="main_action_ripple btn-apply-dialog-chip" main-color-ripple="#ffffff3b">អនុវត្ត</div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
     </div>
 
     <div class="main-container-view-list">
-        <div class="main-container-list-table">
+        <div class="main-container-list-table main-scroll-view-list">
             <div class="table-responsive">
                 <table class="table responsive" id="table">
                     <thead>
@@ -93,15 +99,31 @@
                 </table>
             </div>
         </div>
-        <div class="main-nav-footer-view-list">
-            <div class="left">
-                <div class="main-text-record">កំណត់ត្រាទាំងអស់</div><div class="main-space">:</div><div class="main-record-count">100</div>
+    </div>
+
+    <div class="main-nav-footer-view-list">
+        <div class="left">
+            <div class="main-text-record">កំណត់ត្រាទាំងអស់</div><div class="main-space">:</div><div class="main-record-count">100</div>
+        </div>
+        <div class="main-container-filter-pagination">
+            <div class="nav-filter-record">
+                <div class="main-select-record" id="list_filter_record">
+                    <div class="main_max_screen_cursor_pointer btn-record-display main_action_ripple" main-color-ripple="#ffffff3b">
+                        <div class="text-record-display">10</div>
+                        <span class="icon"><i class="ri-arrow-down-s-line"></i></span>
+                    </div>
+                    <div class="main_max_screen_cursor_pointer content-item-select">
+                        <span class="item">10</span>
+                        <span class="item">20</span>
+                        <span class="item">50</span>
+                        <span class="item">100</span>
+                    </div>
+                </div>
             </div>
-            <div class="main-container-filter-pagination">
-                <div id="pagination"></div>
-            </div>
+            <div id="pagination"></div>
         </div>
     </div>
+
 </div>
 
 <div class="main-container main-page-transition" id="is_view_page">
@@ -117,7 +139,7 @@
 
     <div class="main-container-view-list">
         <div class="box-image-detail">
-            <img src="~/Content/Assets/image/1.jpg"/>
+            <img src="~/Content/Assets/image/1.jpg" />
         </div>
     </div>
 

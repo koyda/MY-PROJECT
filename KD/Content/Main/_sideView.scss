@@ -79,13 +79,13 @@ $color-text-befor-filter-record : #555f67;
     top: 80px;
     z-index: 100;
     height: 56px;
-    margin: 0px 30px;
+    // margin: 0px 25px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     grid-gap: 6px;
     box-sizing: border-box;
-    background: $main-background;
+    background: #fff;
 
     .left {
         display: flex;
@@ -104,17 +104,22 @@ $color-text-befor-filter-record : #555f67;
 
 .main-container {
     position: relative;
-    min-height: calc(100vh - 70px);
+    min-height:100vh;
+    // min-height: calc(100vh - 70px);
     box-sizing: border-box;
     z-index: 99;
+    padding:0px 25px;
+    background: #fff;
 }
 
 // s container view list
 .main-container-view-list {
-    margin: 30px;
     margin-top: 0px;
-    height: calc(100% - 160px);
-    // height: 150%;
+    height: calc(100% - 210px);
+    border-radius: 14px;
+    border: 1px solid #F3F6F7;
+    padding: 4px 4px;
+    overflow: hidden;
 
     @include responsive(500px) {
         margin: 0px;
@@ -122,9 +127,34 @@ $color-text-befor-filter-record : #555f67;
     }
 }
 
+
 .main-container-list-table {
-    overflow: hidden;
-    // height: calc(100% - 136px);
+    height: 100%;
+    padding: 0px 18px 21px 21px;
+}
+
+.main-scroll-view-list {
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        border: 1px solid #fff;
+        background-clip: padding-box;
+        transition: 0.25s ease-in-out;
+
+        &:hover{
+            border: 0px solid #fff;
+        }
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+        background: #d4d8dd91;
+    }
 }
 
 .table-responsive {
@@ -132,134 +162,10 @@ $color-text-befor-filter-record : #555f67;
 }
 
 // e container view list
-// s filter search
-.btn-refresh-list {
-    width: 38px;
-    height: 35px;
-    min-width: 38px;
-    height: $main-height-btn-and-input;
-    border-radius: $main-border-radius;
-    background: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $main-color-in-btn-and-input;
-    outline: none;
-    border: $main-border-btn-and-input;
-
-    i {
-        font-size: 13px;
-        line-height: 13px;
-        margin-left: 1px;
-    }
-}
-
-.main-btn-reload-again {
-    width: 42px;
-    height: 40px;
-    outline: none;
-    border: 0px solid #fff;
-    border-radius: $main-border-radius;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: $main-background-by-primary;
-    color: $main-color-menu;
-
-    i {
-        font-size: 14px;
-        line-height: 14px;
-        pointer-events: none;
-    }
-
-    img {
-        height: 14px;
-    }
-}
-
-.nav-filter-search {
-    display: flex;
-    align-items: center;
-    width: 220px;
-    height: 40px;
-    padding: 0px 4px;
-    border: 0px solid transparent;
-    border-radius: 10px;
-    background: $main-background-by-primary;
-
-    @include responsive(500px) {
-        width: 140px;
-    }
-
-    .icon-search {
-        min-width: 40px;
-        width: 40px;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 15px;
-        line-height: 15px;
-        color: $main-color-menu;
-        transition: 0.3s ease-in-out;
-    }
-
-    &.is-has-search {
-        color: $main-color-primary;
-    }
-
-    .form-control-search::placeholder {
-        font-size: 12px;
-        color: $main-color-menu;
-        letter-spacing: 0.5px;
-    }
-
-    .form-control-search {
-        height: 100%;
-        width: 100%;
-        font-size: 14px;
-        color: $main-color-in-btn-and-input;
-        outline: none;
-        border: 0px;
-        background: transparent;
-    }
-
-
-    .nav-btn-clear-search {
-        min-width: 40px;
-        width: 40px;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #a3a3a3;
-        transform: scale(0);
-        opacity: 0;
-        transition: 0.3s ease-in-out;
-
-        .main-btn-clear-search {
-            width: 25px;
-            height: 25px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            font-size: 13px;
-            line-height: 13px;
-            color: #8e8e8e;
-
-            i {
-                margin-left: 0.5px;
-            }
-        }
-    }
-}
-
-//e filter search
 // s footer record
 .main-nav-footer-view-list {
-    height: 80px;
-    min-height: 80px;
+    height: 68px;
+    min-height: 68px;
     display: flex;
     align-items: center;
     justify-content: space-between;

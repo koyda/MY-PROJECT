@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@section modals{
+   
+}
+@section scripts{
+    @Scripts.Render("~/bundles/datatable")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Content/Plugins/DataTables/datatables.js"></script>
+    <script src="~/Content/Main/Component/drop-list.js"></script>
+    @*<script src="~/Scripts/Views/KD/controlller.js" type="module"></script>*@
+    <script>
+        $(document).ready(function () {
+            $("#active_menu_categories_js").mainActiveMenu();
+        });
+    </script>
+}
+

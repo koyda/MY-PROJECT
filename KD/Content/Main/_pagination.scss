@@ -9,9 +9,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 10px;
+        border-radius: 12px;
         color: $main-color-menu;
-        background: $main-background-by-primary;
+        border: 1px solid #F3F6F7;
+        // background: $main-background-by-primary;
         font-size: 11px;
         line-height: 10px;
         transition: all .15s ease-in-out;
@@ -32,6 +33,7 @@
 
         &.active {
             background: $main-color-primary;
+            border: 1px solid $main-color-primary;
             color: #fff;
             pointer-events: none;
         }

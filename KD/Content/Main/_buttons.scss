@@ -74,9 +74,11 @@ button:focus {
 
 .a-t-btn {
     outline: none;
-    height: 28px;
-    width: 28px;
-    border-radius: 8px;
+    // height: 28px;
+    // width: 28px;
+    height: 27px;
+    width: 27px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,9 +96,8 @@ button:focus {
     }
 
     &.color-view {
-        // border: 1px solid #00bcd41a;
-        background: #00bcd40d;
-        color: #00bcd4;
+        background: #03A9F4;
+        color: #fff;
 
         img {
             height: 12px;
@@ -106,14 +107,14 @@ button:focus {
 
     &.color-update {
         // border: 1px solid #8bc34b1a;
-        background: #8bc34b14;
-        color: #8BC34A;
+        background: #03F4C6;
+        color: #fff;
     }
 
     &.color-delete {
         // border: 1px solid #ff74740f;
-        background: #ff747414;
-        color: #FF7474;
+        background: #FF7474;
+        color: #fff;
     }
 
 }
@@ -163,7 +164,7 @@ button.a-b-t-btn i {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
     outline: none !important;
     border: none;
@@ -191,7 +192,8 @@ button.a-b-t-btn i {
 
     i {
         font-size: 14px;
-        line-height: 13px;
+        line-height: 14px;
+        margin-right: 1px;
     }
 
     i.icon-bold {

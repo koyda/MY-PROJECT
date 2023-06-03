@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\Company\CompanyController.cs" />
     <Compile Include="Controllers\ComponentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -450,6 +451,7 @@
     <Content Include="Views\Products\_Create.cshtml" />
     <Content Include="Views\Products\_Update.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
