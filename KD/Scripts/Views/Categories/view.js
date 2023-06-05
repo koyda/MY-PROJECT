@@ -29,6 +29,13 @@
                     data: null,
                     nameClass: "min-width",
                     render: function (data) {
+                        return `<div class="main-nav-status-table"><div class="main-box-status ${data.Status == "1" ? "enable" : "disable"}">${data.Status == "1" ? '<i class="ri-checkbox-circle-fill"></i>' : '<i class="ri-close-circle-fill"></i>'}</div></div>`;
+                    }
+                },
+                {
+                    data: null,
+                    nameClass: "min-width",
+                    render: function (data) {
                         return data.UserCreate;
                     }
                 },

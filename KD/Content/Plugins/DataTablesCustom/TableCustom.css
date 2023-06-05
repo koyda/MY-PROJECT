@@ -971,3 +971,36 @@ table.dataTable.no-footer {
         white-space: nowrap;
     }
 }
+
+/* s style status */
+.main-nav-status-table{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-nav-status-table .main-box-status{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid #F3F6F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-nav-status-table .main-box-status.enable{
+    color:#3ec88a;
+}
+.main-nav-status-table .main-box-status.disable{
+    color:#f76a6a;
+}
+/* .main-nav-status-table .main-box-status.enable{
+    color:#85BF41;
+}
+.main-nav-status-table .main-box-status.disable{
+    color:#FF7474;
+} */
+.main-nav-status-table .main-box-status i{
+    font-size: 12px;
+    line-height: 12px;
+}
+/* e style status */
