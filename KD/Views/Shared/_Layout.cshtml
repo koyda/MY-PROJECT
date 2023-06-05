@@ -13,13 +13,11 @@
 </head>
 <body>
     <div class="main-container-loading"><div class="loader"><nav><box></box><box></box></nav><nav><box></box><box></box></nav></div></div>
-
     <div class="main-wrapper" style="display:none;">
         @Html.Partial("_leftMenu")
         <div class="main-nav-right main_scroll_container_view1">
             @Html.Partial("_Header")
             @RenderBody()
-            @*<div class="main-space-footer"></div>*@
         </div>
         @RenderSection("modals", false)
     </div>
